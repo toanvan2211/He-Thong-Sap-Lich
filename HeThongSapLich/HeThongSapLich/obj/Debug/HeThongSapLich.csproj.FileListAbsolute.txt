@@ -1,0 +1,47 @@
+E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\bin\Debug\HeThongSapLich.exe.config
+E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\bin\Debug\HeThongSapLich.exe
+E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\bin\Debug\HeThongSapLich.pdb
+E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\obj\Debug\HeThongSapLich.Main.resources
+E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\obj\Debug\HeThongSapLich.Properties.Resources.resources
+E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\obj\Debug\HeThongSapLich.csproj.GenerateResource.cache
+E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\obj\Debug\HeThongSapLich.csproj.CoreCompileInputs.cache
+E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\obj\Debug\HeThongSapLich.exe
+E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\obj\Debug\HeThongSapLich.pdb
+E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\obj\Debug\HeThongSapLich.Login.resources
+E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\obj\Debug\HeThongSapLich.User_Control.UC_ThongTin.resources
+E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\obj\Debug\HeThongSapLich.csprojAssemblyReference.cache
+E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\obj\Debug\HeThongSapLich.User_Control.UC_GiangVien.resources
+E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\obj\Debug\HeThongSapLich.User_Control.UC_Lop.resources
+E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\obj\Debug\HeThongSapLich.User_Control.UC_LichThi.resources
+E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\obj\Debug\HeThongSapLich.User_Control.UC_Phong.resources
+D:\Download temp\Phần mềm\HeThongSapLich\HeThongSapLich\bin\Debug\HeThongSapLich.exe.config
+D:\Download temp\Phần mềm\HeThongSapLich\HeThongSapLich\bin\Debug\HeThongSapLich.exe
+D:\Download temp\Phần mềm\HeThongSapLich\HeThongSapLich\bin\Debug\HeThongSapLich.pdb
+D:\Download temp\Phần mềm\HeThongSapLich\HeThongSapLich\obj\Debug\HeThongSapLich.csprojAssemblyReference.cache
+D:\Download temp\Phần mềm\HeThongSapLich\HeThongSapLich\obj\Debug\HeThongSapLich.Main.resources
+D:\Download temp\Phần mềm\HeThongSapLich\HeThongSapLich\obj\Debug\HeThongSapLich.Login.resources
+D:\Download temp\Phần mềm\HeThongSapLich\HeThongSapLich\obj\Debug\HeThongSapLich.Properties.Resources.resources
+D:\Download temp\Phần mềm\HeThongSapLich\HeThongSapLich\obj\Debug\HeThongSapLich.User_Control.UC_GiangVien.resources
+D:\Download temp\Phần mềm\HeThongSapLich\HeThongSapLich\obj\Debug\HeThongSapLich.User_Control.UC_LichThi.resources
+D:\Download temp\Phần mềm\HeThongSapLich\HeThongSapLich\obj\Debug\HeThongSapLich.User_Control.UC_Lop.resources
+D:\Download temp\Phần mềm\HeThongSapLich\HeThongSapLich\obj\Debug\HeThongSapLich.User_Control.UC_Phong.resources
+D:\Download temp\Phần mềm\HeThongSapLich\HeThongSapLich\obj\Debug\HeThongSapLich.User_Control.UC_ThongTin.resources
+D:\Download temp\Phần mềm\HeThongSapLich\HeThongSapLich\obj\Debug\HeThongSapLich.csproj.GenerateResource.cache
+D:\Download temp\Phần mềm\HeThongSapLich\HeThongSapLich\obj\Debug\HeThongSapLich.exe
+D:\Download temp\Phần mềm\HeThongSapLich\HeThongSapLich\obj\Debug\HeThongSapLich.pdb
+E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\HeThongSapLich\bin\Debug\HeThongSapLich.exe.config
+E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\HeThongSapLich\bin\Debug\HeThongSapLich.exe
+E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\HeThongSapLich\bin\Debug\HeThongSapLich.pdb
+E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\HeThongSapLich\obj\Debug\HeThongSapLich.Main.resources
+E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\HeThongSapLich\obj\Debug\HeThongSapLich.Login.resources
+E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\HeThongSapLich\obj\Debug\HeThongSapLich.Properties.Resources.resources
+E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\HeThongSapLich\obj\Debug\HeThongSapLich.User_Control.UC_LichThi.resources
+E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\HeThongSapLich\obj\Debug\HeThongSapLich.User_Control.UC_ThongTin.resources
+E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\HeThongSapLich\obj\Debug\HeThongSapLich.csproj.GenerateResource.cache
+E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\HeThongSapLich\obj\Debug\HeThongSapLich.exe
+E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\HeThongSapLich\obj\Debug\HeThongSapLich.pdb
+E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\HeThongSapLich\obj\Debug\HeThongSapLich.LogOut.resources
+E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\HeThongSapLich\obj\Debug\HeThongSapLich.csprojAssemblyReference.cache
+E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\HeThongSapLich\obj\Debug\HeThongSapLich.User_Control.UC_GiangVien.resources
+E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\HeThongSapLich\obj\Debug\HeThongSapLich.SoBuoiGac.resources
+E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\HeThongSapLich\obj\Debug\HeThongSapLich.ChinhSuaThongTin.resources
