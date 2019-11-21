@@ -20,6 +20,7 @@ namespace HeThongSapLich.User_Control
         {
             InitializeComponent();
 
+            PhanQuyen();
             LoadLichThi();
             LoadDSHocKy();
             LoadComboBox();
@@ -27,6 +28,14 @@ namespace HeThongSapLich.User_Control
         }
 
         #region Phương Thức
+
+        void PhanQuyen()
+        {
+            if (Login.LoaiTaiKhoan == "admin")
+            {
+                btnSepGiangVienGac.Enabled = true;
+            }
+        }
 
         void SapXepDonCuc()
         {
@@ -505,7 +514,17 @@ namespace HeThongSapLich.User_Control
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
-            Xoa();
+            LichThi lt = new LichThi(LichThiDAO.Instance.LayLichThiTheoMaChuaFormat(cbMaLichThi.Text).Rows[0]);
+            if (Main.maGV == lt.MaGV)
+            {
+                lt.MaGV = null;
+                LichThiDAO.Instance.HuyDangKyGac(lt.MaLichThi);
+            }
+            else
+            {
+                MessageBox.Show("Bạn không gác lịch này!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            LoadLichThi();
         }
 
         private void btnDangKy_Click(object sender, EventArgs e)

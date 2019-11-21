@@ -296,6 +296,7 @@
             // btnSepGiangVienGac
             // 
             this.btnSepGiangVienGac.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(41)))), ((int)(((byte)(44)))));
+            this.btnSepGiangVienGac.Enabled = false;
             this.btnSepGiangVienGac.FlatAppearance.BorderSize = 0;
             this.btnSepGiangVienGac.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSepGiangVienGac.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -305,7 +306,7 @@
             this.btnSepGiangVienGac.Name = "btnSepGiangVienGac";
             this.btnSepGiangVienGac.Size = new System.Drawing.Size(247, 58);
             this.btnSepGiangVienGac.TabIndex = 12;
-            this.btnSepGiangVienGac.Text = "Sắp giảng viên gác thi";
+            this.btnSepGiangVienGac.Text = "Sắp lịch tự động";
             this.btnSepGiangVienGac.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSepGiangVienGac.UseVisualStyleBackColor = false;
             this.btnSepGiangVienGac.Click += new System.EventHandler(this.btnSepGiangVienGac_Click);

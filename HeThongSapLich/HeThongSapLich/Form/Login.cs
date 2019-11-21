@@ -13,7 +13,8 @@ namespace HeThongSapLich
 {
     public partial class Login : Form
     {
-        public static string user = "";
+        public static string user;
+        public static string LoaiTaiKhoan;
         public Login()
         {
             InitializeComponent();
@@ -32,6 +33,7 @@ namespace HeThongSapLich
             if (KiemTra(TaiKhoan, MatKhau))
             {
                 user = TaiKhoan;
+                LoaiTaiKhoan = TaiKhoanDAO.Instance.LayLoaiTaiKhoan(TaiKhoan);
                 using (Main m = new Main())
                 {
                     this.Hide();
@@ -95,6 +97,11 @@ namespace HeThongSapLich
         private void btnThoat_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

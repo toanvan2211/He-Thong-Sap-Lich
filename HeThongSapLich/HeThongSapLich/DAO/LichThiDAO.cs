@@ -100,11 +100,16 @@ namespace HeThongSapLich.DAO
                 return true;
             }
         }
-
-
+        
         public void ResetLichThi()
         {
             string Lenh = "update LichThi set maGiangVien = null where magiangvien is not null";
+            DataProvider.Instance.ExecuteNonQuery(Lenh);
+        }
+
+        public void HuyDangKyGac(string maLichThi)
+        {
+            string Lenh = "update LichThi set maGiangVien = null where maLichThi = '" + maLichThi + "'";
             DataProvider.Instance.ExecuteNonQuery(Lenh);
         }
     }

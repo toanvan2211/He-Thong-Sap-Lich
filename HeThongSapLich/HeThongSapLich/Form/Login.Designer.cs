@@ -36,7 +36,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.lbThongBao = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.btnDatabase = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.tbMatKhau = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -44,7 +43,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
+            this.btnDatabase = new System.Windows.Forms.Button();
             this.dragControl1 = new QuanLiDienThoai.DragControl();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -52,7 +53,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(198)))), ((int)(((byte)(138)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(96)))), ((int)(((byte)(117)))));
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.btnThoat);
             this.panel1.Controls.Add(this.panel2);
@@ -103,7 +104,8 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.Orange;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(49)))), ((int)(((byte)(53)))));
+            this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.button2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
@@ -151,29 +153,13 @@
             this.label6.TabIndex = 10;
             this.label6.Text = "Design by Toan, Inspired by C# UI Academy";
             // 
-            // btnDatabase
-            // 
-            this.btnDatabase.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDatabase.BackColor = System.Drawing.Color.Transparent;
-            this.btnDatabase.FlatAppearance.BorderSize = 0;
-            this.btnDatabase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDatabase.Font = new System.Drawing.Font("SFU ClearGothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDatabase.ForeColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnDatabase.Image = ((System.Drawing.Image)(resources.GetObject("btnDatabase.Image")));
-            this.btnDatabase.Location = new System.Drawing.Point(668, 517);
-            this.btnDatabase.Name = "btnDatabase";
-            this.btnDatabase.Size = new System.Drawing.Size(58, 59);
-            this.btnDatabase.TabIndex = 9;
-            this.btnDatabase.UseVisualStyleBackColor = false;
-            this.btnDatabase.Click += new System.EventHandler(this.btnDatabase_Click);
-            // 
             // label4
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(114, 336);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(114, 360);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(86, 21);
             this.label4.TabIndex = 7;
@@ -183,7 +169,7 @@
             // 
             this.tbMatKhau.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tbMatKhau.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbMatKhau.Location = new System.Drawing.Point(206, 333);
+            this.tbMatKhau.Location = new System.Drawing.Point(206, 357);
             this.tbMatKhau.Name = "tbMatKhau";
             this.tbMatKhau.Size = new System.Drawing.Size(338, 29);
             this.tbMatKhau.TabIndex = 6;
@@ -196,8 +182,8 @@
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(114, 291);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(114, 315);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(88, 21);
             this.label3.TabIndex = 5;
@@ -207,7 +193,7 @@
             // 
             this.tbTaiKhoan.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tbTaiKhoan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbTaiKhoan.Location = new System.Drawing.Point(208, 288);
+            this.tbTaiKhoan.Location = new System.Drawing.Point(208, 312);
             this.tbTaiKhoan.Name = "tbTaiKhoan";
             this.tbTaiKhoan.Size = new System.Drawing.Size(338, 29);
             this.tbTaiKhoan.TabIndex = 4;
@@ -219,7 +205,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Blue;
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(217, 54);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(299, 37);
@@ -231,8 +217,8 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(299, 227);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(299, 264);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(140, 32);
             this.label2.TabIndex = 2;
@@ -254,9 +240,41 @@
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.BtnLogin_Click);
             // 
+            // btnDatabase
+            // 
+            this.btnDatabase.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDatabase.BackColor = System.Drawing.Color.Transparent;
+            this.btnDatabase.FlatAppearance.BorderSize = 0;
+            this.btnDatabase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDatabase.Font = new System.Drawing.Font("SFU ClearGothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDatabase.ForeColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnDatabase.Image = ((System.Drawing.Image)(resources.GetObject("btnDatabase.Image")));
+            this.btnDatabase.Location = new System.Drawing.Point(668, 517);
+            this.btnDatabase.Name = "btnDatabase";
+            this.btnDatabase.Size = new System.Drawing.Size(58, 59);
+            this.btnDatabase.TabIndex = 9;
+            this.btnDatabase.UseVisualStyleBackColor = false;
+            this.btnDatabase.Click += new System.EventHandler(this.btnDatabase_Click);
+            // 
             // dragControl1
             // 
             this.dragControl1.SelectControl = this.panel2;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(169)))), ((int)(((byte)(255)))));
+            this.button1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("SFU ClearGothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(642, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(48, 38);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "_";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Login
             // 
@@ -282,7 +300,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button btnDatabase;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel2;
         private QuanLiDienThoai.DragControl dragControl1;
@@ -296,5 +313,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.Button btnDatabase;
+        private System.Windows.Forms.Button button1;
     }
 }

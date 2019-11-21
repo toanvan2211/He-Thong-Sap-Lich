@@ -28,6 +28,12 @@ namespace HeThongSapLich.DAO
             return KetQua.Rows.Count > 0;
         }
 
+        public string LayLoaiTaiKhoan(string user)
+        {
+            DataRow row = DataProvider.Instance.ExecuteQuery("Select * from taikhoan where taikhoan = '" + user + "'").Rows[0];
+            return (string)row["loaiTaiKhoan"];
+        }
+
         public string LayMaGV(string user)
         {
             DataRow row = DataProvider.Instance.ExecuteQuery("Select magiangvien from taikhoan where taikhoan = '" + user + "'").Rows[0];

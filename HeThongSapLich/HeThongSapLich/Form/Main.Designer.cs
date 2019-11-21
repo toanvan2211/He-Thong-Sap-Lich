@@ -62,7 +62,7 @@
             // 
             // pnlLeft
             // 
-            this.pnlLeft.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.pnlLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(107)))), ((int)(((byte)(141)))));
             this.pnlLeft.Controls.Add(this.pnlClicked);
             this.pnlLeft.Controls.Add(this.panel2);
             this.pnlLeft.Controls.Add(this.btnLichThi);
@@ -84,7 +84,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.SeaGreen;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(78)))), ((int)(((byte)(95)))));
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.btnThuNho);
@@ -252,9 +252,9 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(41)))), ((int)(((byte)(44)))));
             this.label1.Location = new System.Drawing.Point(17, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(284, 22);
+            this.label1.Size = new System.Drawing.Size(395, 22);
             this.label1.TabIndex = 9;
-            this.label1.Text = "Hệ thống xếp lịch gác thi - Khoa CNTT";
+            this.label1.Text = "Hệ thống xếp lịch gác thi - Khoa Công nghệ thông tin";
             // 
             // btnExit
             // 
@@ -275,7 +275,7 @@
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.Teal;
+            this.panel4.BackColor = System.Drawing.Color.SteelBlue;
             this.panel4.Controls.Add(this.lblDay);
             this.panel4.Controls.Add(this.lblTime);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
@@ -320,6 +320,7 @@
             // 
             // pnlControls
             // 
+            this.pnlControls.BackColor = System.Drawing.SystemColors.Window;
             this.pnlControls.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlControls.Location = new System.Drawing.Point(203, 123);
             this.pnlControls.Name = "pnlControls";
