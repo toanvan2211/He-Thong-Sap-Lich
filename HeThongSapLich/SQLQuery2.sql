@@ -34,7 +34,8 @@ go
 
 create table GacThi
 (
-	maGiangVien varchar(10) references giangVien(maGiangVien) primary key,
+	maGacThi int identity(001, 1) primary key,
+	maGiangVien varchar(10) references giangVien(maGiangVien),
 	soBuoiGac tinyint not null default 0,
 	maHocKy varchar(10) references hocKy(maHocKy),
 )
@@ -146,7 +147,7 @@ INSERT INTO taiKhoan
 	VALUES ('admin', default, 'admin', '1CNTT'), ('giangvien', default, 'giangvien', '2CNTT')
 go
 
-INSERT INTO GACTHI
+INSERT INTO GACTHI (maGiangVien, soBuoiGac, maHocKy)
 	VALUES ('1CNTT', DEFAULT, '001'),
 			('2CNTT', DEFAULT, '001'),
 			('3CNTT', DEFAULT, '001'),
@@ -161,12 +162,3 @@ as
 	Select * from taikhoan where taiKhoan = @userName and matKhau = @password
 go
 
-select * from giangVien
-
-alter table giangvien
-add gioiTinh nvarchar(10) not null default 'Nam'
-
-select * from gacthi
-SELECT * FROM GIANGVIEN
-select * from hocky
-select * from LichThi
