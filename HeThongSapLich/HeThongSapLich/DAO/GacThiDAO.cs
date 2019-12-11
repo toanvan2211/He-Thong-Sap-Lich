@@ -41,13 +41,27 @@ namespace HeThongSapLich.DAO
         public DataRow LayThongTin(string maGiangVien)
         {
             string query = "select * from gacthi where maGiangVien = '" + maGiangVien + "'";
-            return DataProvider.Instance.ExecuteQuery(query).Rows[0];
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query);
+            if (dt.Rows.Count != 0)
+            {
+                return dt.Rows[0];
+            }
+            else
+            {
+                return null;
+            }
         }
 
         public int LamMoi(string maHocKy)
         {
             string query = "update gacThi set soBuoiGac = 0 where maHocKy = '" + maHocKy + "'";
             return DataProvider.Instance.ExecuteNonQuery(query);
+        }
+
+        public int TaoPhieuGac(string maGV, string maHocKy)
+        {
+            string query = "USP_TaoPhieuGacThi @maGV , @maHocKy";
+            return DataProvider.Instance.ExecuteNonQuery(query, new object[] { maGV, maHocKy });
         }
     }
 }

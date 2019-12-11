@@ -48,6 +48,8 @@
   <ItemGroup>
     <Compile Include="DAO\GacThiDAO.cs" />
     <Compile Include="DAO\HocKyDAO.cs" />
+    <Compile Include="DAO\LopHocPhanDAO.cs" />
+    <Compile Include="DAO\MonDAO.cs" />
     <Compile Include="DTO\GacThi.cs" />
     <Compile Include="DTO\HocKy.cs" />
     <Compile Include="DAO\DataProvider.cs" />
@@ -99,23 +101,53 @@
     <Compile Include="Form\SoBuoiGac.Designer.cs">
       <DependentUpon>SoBuoiGac.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form\ThemGiangVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\ThemGiangVien.Designer.cs">
+      <DependentUpon>ThemGiangVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\ThemLHP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\ThemLHP.Designer.cs">
+      <DependentUpon>ThemLHP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Control\UC_Lich.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Control\UC_Lich.Designer.cs">
+      <DependentUpon>UC_Lich.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Control\UC_TaoLich.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Control\UC_TaoLich.Designer.cs">
+      <DependentUpon>UC_TaoLich.cs</DependentUpon>
+    </Compile>
     <Compile Include="User Control\UC_GiangVien.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="User Control\UC_GiangVien.Designer.cs">
       <DependentUpon>UC_GiangVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="User Control\UC_LichThi.cs">
+    <Compile Include="User Control\UC_SapLich.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="User Control\UC_LichThi.Designer.cs">
-      <DependentUpon>UC_LichThi.cs</DependentUpon>
+    <Compile Include="User Control\UC_SapLich.Designer.cs">
+      <DependentUpon>UC_SapLich.cs</DependentUpon>
     </Compile>
     <Compile Include="User Control\UC_ThongTin.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="User Control\UC_ThongTin.Designer.cs">
       <DependentUpon>UC_ThongTin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\XoaLHP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\XoaLHP.Designer.cs">
+      <DependentUpon>XoaLHP.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
@@ -141,14 +173,29 @@
     <EmbeddedResource Include="Form\SoBuoiGac.resx">
       <DependentUpon>SoBuoiGac.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\ThemGiangVien.resx">
+      <DependentUpon>ThemGiangVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\ThemLHP.resx">
+      <DependentUpon>ThemLHP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Control\UC_Lich.resx">
+      <DependentUpon>UC_Lich.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Control\UC_TaoLich.resx">
+      <DependentUpon>UC_TaoLich.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="User Control\UC_GiangVien.resx">
       <DependentUpon>UC_GiangVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="User Control\UC_LichThi.resx">
-      <DependentUpon>UC_LichThi.cs</DependentUpon>
+    <EmbeddedResource Include="User Control\UC_SapLich.resx">
+      <DependentUpon>UC_SapLich.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Control\UC_ThongTin.resx">
       <DependentUpon>UC_ThongTin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\XoaLHP.resx">
+      <DependentUpon>XoaLHP.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

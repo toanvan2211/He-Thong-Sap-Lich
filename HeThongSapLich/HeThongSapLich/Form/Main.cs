@@ -56,6 +56,12 @@ namespace HeThongSapLich
         {
             timerPExit.Start();
         }
+        private void btnTaoLich_Click(object sender, EventArgs e)
+        {
+            UC_TaoLich uctl = new UC_TaoLich();
+            ThemUC(uctl);
+            LuotPanel(btnTaoLich);
+        }
 
         private void BbtnThongTin_Click(object sender, EventArgs e)
         {
@@ -70,12 +76,18 @@ namespace HeThongSapLich
             ThemUC(ucgv);
             LuotPanel(btnGiangVien);
         }
+        private void btnLichThi_Click_1(object sender, EventArgs e)
+        {
+            UC_Lich ucl = new UC_Lich();
+            ThemUC(ucl);
+            LuotPanel(btnLichThi);
+        }
 
         private void btnLichThi_Click(object sender, EventArgs e)
         {
-            UC_LichThi uclt = new UC_LichThi();
+            UC_SapLich uclt = new UC_SapLich();
             ThemUC(uclt);
-            LuotPanel(btnLichThi);
+            LuotPanel(btnSapLich);
         }
 
         private void Timer1_Tick(object sender, EventArgs e)  //Code để thu nhỏ menu cho cái btn ở dưới nè
@@ -149,5 +161,6 @@ namespace HeThongSapLich
             this.Close();
             Login.user = "";
         }
+
     }
 }

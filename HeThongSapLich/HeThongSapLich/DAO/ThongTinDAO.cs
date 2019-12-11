@@ -19,13 +19,13 @@ namespace HeThongSapLich.DAO
 
         public ThongTinDAO() { }
 
-        public DataTable LoadDSLop()
-        {
-            DataTable data = new DataTable();
+        //public DataTable LoadDSLop()
+        //{
+        //    DataTable data = new DataTable();
 
-            data = DataProvider.Instance.ExecuteQuery("USP_LayDSGiangVien");
+        //    data = DataProvider.Instance.ExecuteQuery("USP_LayDSGiangVien");
 
-            return data;
-        }
+        //    return data;
+        //}
     }
 }

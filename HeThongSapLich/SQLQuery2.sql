@@ -50,7 +50,8 @@ go
 
 create table Lop
 (
-	maLop varchar(10) primary key
+	maLop varchar(10) primary key,
+	tenLop nvarchar(100) not null default N'Chưa đặt tên',
 )
 go
 
@@ -65,7 +66,8 @@ go
 
 create table Phong
 (
-	maPhong varchar(10 ) primary key,
+	maPhong varchar(10) primary key,
+	tenPhong nvarchar(100) not null default N'Chưa đặt tên',
 	sucChua tinyint not null default 10
 )
 go
@@ -83,7 +85,7 @@ create table LichThi
 go
 
 
-INSERT INTO PHONG 
+INSERT INTO PHONG (maPhong, sucChua)
 	VALUES ('C1.1', default), ('C1.2', default), ('C1.3', default), ('C1.4', default), ('C1.5', default),
 		   ('C2.1', default), ('C2.2', default), ('C2.3', default), ('C2.4', default), ('C2.5', default),
 		   ('C3.1', default), ('C3.2', default), ('C3.3', default), ('C3.4', default), ('C3.5', default),
@@ -100,7 +102,7 @@ INSERT INTO GIANGVIEN (maGiangVien, ten, khoa)
 			('6CNTT', N'Nguyễn Văn F', default)
 go
 
-INSERT INTO LOP
+INSERT INTO LOP (MaLop)
 	VALUES ('KTPM0117'), ('KTPM0217'),
 		   ('HTTT0117'), ('HTTT0217'),
 		   ('KHMT0117'), ('KHMT0217')
@@ -162,3 +164,59 @@ as
 	Select * from taikhoan where taiKhoan = @userName and matKhau = @password
 go
 
+create proc USP_LayDSLichThi
+@maHocKy varchar(10)
+as
+	select lt.maLichThi, lt.maPhong, lt.maGiangVien, gv.ten, lt.maLHP, lt.ngayThi, lt.caThi
+	from LichThi lt, giangVien gv
+	where lt.maGiangVien = gv.maGiangVien
+		and lt.MaHocKy = @maHocKy
+go
+
+create proc USP_LayDSLichThi2
+@maHocKy varchar(10)
+as
+	select lt.maLichThi, lt.maPhong, lt.maGiangVien, gv.ten, mon.ten as 'mon', lt.maLHP, lt.ngayThi, lt.caThi
+	from LichThi lt, giangVien gv, mon, LopHocPhan lhp 
+	where lt.maGiangVien = gv.maGiangVien
+		and lt.MaHocKy = @maHocKy
+		and mon.maMon = lhp.maMon
+		and lt.maLHP = lhp.maLHP
+go
+
+create proc USP_ThemLichThi
+@maLich varchar(10), @maPhong varchar(10), @maLHP varchar(20), @ngayThi date, @caThi varchar(10), @maHocKy varchar(10)
+as
+	insert into LichThi (maLichThi, maPhong, maLHP, ngayThi, caThi, maHocKy)
+	values (@maLich, @maPhong, @maLHP, @ngayThi, @caThi, @maHocKy)
+go
+
+create proc USP_XoaLich
+@maLich varchar(10)
+as
+	delete LichThi
+	where maLichThi = @maLich
+go
+
+create proc USP_TaoPhieuGacThi
+@maGV varchar(10), @maHocKy varchar(10)
+as 
+	insert into GacThi (maGiangVien, maHocKy)
+	values (@maGV, @maHocKy)
+go
+
+create proc USP_ThemGiangVien
+@maGV varchar(10), @tenGV nvarchar(100), @khoa nvarchar(100), @gioiTinh nvarchar(10), @gmail varchar(100)
+as
+	insert into GiangVien
+	values (@maGv, @tenGv, @khoa, @gioiTinh, @gmail)
+go
+
+create proc USP_ThemGiangVien1
+@maGV varchar(10), @tenGV nvarchar(100), @khoa nvarchar(100), @gioiTinh nvarchar(10)
+as
+	insert into GiangVien (maGiangVien, Ten, Khoa, GioiTinh)
+	values (@maGv, @tenGv, @khoa, @gioiTinh)
+go
+
+create proc USP_TimGiangVienCoPhieuGac

@@ -1,6 +1,6 @@
 ﻿namespace HeThongSapLich.User_Control
 {
-    partial class UC_LichThi
+    partial class UC_SapLich
     {
         /// <summary> 
         /// Required designer variable.
@@ -429,6 +429,7 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.dgvLichThi);
+            this.panel2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.ForeColor = System.Drawing.Color.Black;
             this.panel2.Location = new System.Drawing.Point(0, 94);
             this.panel2.Name = "panel2";
@@ -496,7 +497,7 @@
             this.CaThi.Name = "CaThi";
             this.CaThi.ReadOnly = true;
             // 
-            // UC_LichThi
+            // UC_SapLich
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -507,7 +508,7 @@
             this.Font = new System.Drawing.Font("SFU ClearGothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.White;
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "UC_LichThi";
+            this.Name = "UC_SapLich";
             this.Size = new System.Drawing.Size(1397, 777);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

@@ -23,19 +23,13 @@ namespace HeThongSapLich.DAO
 
         private PhongDAO() { }
 
-        public List<Phong> LoadDSPhong()
+        public DataTable LoadDSPhong()
         {
-            List<Phong> listPhong = new List<Phong>();
+            DataTable dt = new DataTable();
 
-            DataTable data = DataProvider.Instance.ExecuteQuery("USP_LayDSPhong");
+            dt = DataProvider.Instance.ExecuteQuery("Select * from Phong");
 
-            foreach (DataRow item in data.Rows)
-            {
-                Phong phong = new Phong(item);
-                listPhong.Add(phong);
-            }
-
-            return listPhong;
+            return dt;
         }
     }
 }

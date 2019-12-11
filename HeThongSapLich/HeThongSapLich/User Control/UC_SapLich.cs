@@ -12,11 +12,11 @@ using HeThongSapLich.DTO;
 
 namespace HeThongSapLich.User_Control
 {
-    public partial class UC_LichThi : UserControl
+    public partial class UC_SapLich : UserControl
     {
         public string maHocKy;
         List<HocKy> listHocKy = new List<HocKy>();
-        public UC_LichThi()
+        public UC_SapLich()
         {
             InitializeComponent();
 
@@ -54,6 +54,14 @@ namespace HeThongSapLich.User_Control
                 }
             }
 
+            List<GiangVien> giangv = new List<GiangVien>();
+            DataTable dtgv = GiangVienDAO.Instance.LayDSGiangVien();
+            foreach (DataRow item in dtgv.Rows)
+            {
+                GiangVien gv = new GiangVien(item);
+                giangv.Add(gv);
+            }
+
             DataTable dataGacThi = GacThiDAO.Instance.LayDSGacThi(maHocKy);
             List<GacThi> listGacThi = new List<GacThi>();
             foreach (DataRow item in dataGacThi.Rows)
@@ -61,6 +69,41 @@ namespace HeThongSapLich.User_Control
                 GacThi gt = new GacThi(item);
                 listGacThi.Add(gt);
             }
+
+            //Kiểm tra xem ai chưa có lịch gác thì tạo lịch gác
+            if (giangv.Count > listGacThi.Count)
+            {
+                for (int i = 0; i < giangv.Count; i++)
+                {
+                    for (int j = 0; j < listGacThi.Count; j++)
+                    {
+                        if (giangv[i].MaGV == listGacThi[j].MaGiangVien)
+                        {
+                            giangv.RemoveAt(i);
+                            listGacThi.RemoveAt(j);
+                            i--;
+                            j--;
+                            break;
+                        }
+                    }
+                }
+                if (giangv.Count > 0)
+                {
+                    for (int i = 0; i < giangv.Count; i++)
+                    {
+                        GacThiDAO.Instance.TaoPhieuGac(giangv[i].MaGV, maHocKy);
+                    }
+                }
+                dataGacThi = GacThiDAO.Instance.LayDSGacThi(maHocKy);
+                listGacThi.Clear();
+                foreach (DataRow item in dataGacThi.Rows)
+                {
+                    GacThi gt = new GacThi(item);
+                    listGacThi.Add(gt);
+                }
+
+            }
+            //----------------------------------------
 
             for (int j = 0; j < listGacThi.Count; j++)
             {
@@ -175,6 +218,14 @@ namespace HeThongSapLich.User_Control
                 }
             }
 
+            List<GiangVien> giangv = new List<GiangVien>();
+            DataTable dtgv = GiangVienDAO.Instance.LayDSGiangVien();
+            foreach (DataRow item in dtgv.Rows)
+            {
+                GiangVien gv = new GiangVien(item);
+                giangv.Add(gv);
+            }
+
             DataTable dataGacThi = GacThiDAO.Instance.LayDSGacThi(maHocKy);
             List<GacThi> listGacThi = new List<GacThi>();
             foreach (DataRow item in dataGacThi.Rows)
@@ -182,7 +233,40 @@ namespace HeThongSapLich.User_Control
                 GacThi gt = new GacThi(item);
                 listGacThi.Add(gt);
             }
+            //Kiểm tra xem ai chưa có lịch gác thì tạo lịch gác
+            if (giangv.Count > listGacThi.Count)
+            {
+                for (int  i = 0;  i < giangv.Count;  i++)
+                {
+                    for (int j = 0; j < listGacThi.Count; j++)
+                    {
+                        if (giangv[i].MaGV == listGacThi[j].MaGiangVien)
+                        {
+                            giangv.RemoveAt(i);
+                            listGacThi.RemoveAt(j);
+                            i--;
+                            j--;
+                            break;
+                        }
+                    }
+                }
+                if (giangv.Count > 0)
+                {
+                    for (int i = 0; i < giangv.Count; i++)
+                    {
+                        GacThiDAO.Instance.TaoPhieuGac(giangv[i].MaGV, maHocKy);
+                    }
+                }
+                dataGacThi = GacThiDAO.Instance.LayDSGacThi(maHocKy);
+                listGacThi.Clear();
+                foreach (DataRow item in dataGacThi.Rows)
+                {
+                    GacThi gt = new GacThi(item);
+                    listGacThi.Add(gt);
+                }
 
+            }
+            //----------------------------------------
             int index = 0;
             for (int i = 0; i < listLichTrong.Count; i++)
             {
@@ -294,6 +378,11 @@ namespace HeThongSapLich.User_Control
             byte soBuoiGac = Convert.ToByte(nupSoBuoiGac.Value);
             string maGV = cbMaGV.Text;
             DataRow row = GacThiDAO.Instance.LayThongTin(maGV);
+            if (row == null)
+            {
+                GacThiDAO.Instance.TaoPhieuGac(maGV, maHocKy);
+                row = GacThiDAO.Instance.LayThongTin(maGV);
+            }
 
             GacThi gt = new GacThi(row);
 
@@ -388,6 +477,13 @@ namespace HeThongSapLich.User_Control
                             if (i == listLichThiTam.Count - 1)
                             {
                                 DataRow row = GacThiDAO.Instance.LayThongTin(Main.maGV);
+
+                                if (row == null)
+                                {
+                                    GacThiDAO.Instance.TaoPhieuGac(Main.maGV, maHocKy);
+                                    row = GacThiDAO.Instance.LayThongTin(Main.maGV);
+                                }
+
                                 GacThi gt = new GacThi(row);
 
                                 LichThiDAO.Instance.CapNhatGiangVienGacThi(Main.maGV, lt.MaLichThi);
@@ -405,6 +501,13 @@ namespace HeThongSapLich.User_Control
                 else
                 {
                     DataRow row = GacThiDAO.Instance.LayThongTin(Main.maGV);
+
+                    if (row == null)
+                    {
+                        GacThiDAO.Instance.TaoPhieuGac(Main.maGV, maHocKy);
+                        row = GacThiDAO.Instance.LayThongTin(Main.maGV);
+                    }
+
                     GacThi gt = new GacThi(row);
 
                     LichThiDAO.Instance.CapNhatGiangVienGacThi(Main.maGV, lt.MaLichThi);
@@ -484,7 +587,7 @@ namespace HeThongSapLich.User_Control
             cbNgay.DisplayMember = "ngayThi";
             cbCaThi.DisplayMember = "caThi";
 
-            dt = DataProvider.Instance.ExecuteQuery("Select maGiangVien from giangvien");
+            dt = GiangVienDAO.Instance.LayDSGiangVien();
             cbMaGV.DataSource = dt;
             cbMaGV.DisplayMember = "maGiangVien";
         }

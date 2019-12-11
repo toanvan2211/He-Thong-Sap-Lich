@@ -22,7 +22,23 @@ namespace HeThongSapLich.DAO
         public DataTable LayDSHocKy()
         {
             string query = "select * from hocky";
+
             return DataProvider.Instance.ExecuteQuery(query);
+        }
+
+        public string LayMaHocKy(string tenHocKy)
+        {
+            string query = "select maHocKy from hocky where tenHocKy like N'" + tenHocKy + "'";
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query);
+
+            if (dt.Rows.Count != 0)
+            {
+                return dt.Rows[0]["maHocKy"].ToString();
+            }
+            else
+            {
+                return "null";
+            }
         }
     }
 }

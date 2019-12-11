@@ -38,20 +38,22 @@
             this.gmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.tbKhoa = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.tbMail = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.tbGioiTinh = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.tbMaGV = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.tbTen = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btnThemGiangVien = new System.Windows.Forms.Button();
             this.btnChangeInfo = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.btnCapNhatThongTin = new System.Windows.Forms.Button();
+            this.cbKhoa = new System.Windows.Forms.ComboBox();
+            this.cbGioiTinh = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGiangVien)).BeginInit();
             this.panel2.SuspendLayout();
@@ -72,7 +74,7 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.dgvGiangVien);
-            this.panel1.Font = new System.Drawing.Font("SFU ClearGothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.ForeColor = System.Drawing.Color.Black;
             this.panel1.Location = new System.Drawing.Point(28, 162);
             this.panel1.Name = "panel1";
@@ -153,11 +155,12 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.tbKhoa);
+            this.panel2.Controls.Add(this.cbKhoa);
+            this.panel2.Controls.Add(this.cbGioiTinh);
+            this.panel2.Controls.Add(this.btnCapNhatThongTin);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.tbMail);
             this.panel2.Controls.Add(this.label9);
-            this.panel2.Controls.Add(this.tbGioiTinh);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.tbMaGV);
             this.panel2.Controls.Add(this.label7);
@@ -167,15 +170,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(450, 530);
             this.panel2.TabIndex = 5;
-            // 
-            // tbKhoa
-            // 
-            this.tbKhoa.Font = new System.Drawing.Font("SFU ClearGothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbKhoa.Location = new System.Drawing.Point(118, 114);
-            this.tbKhoa.Name = "tbKhoa";
-            this.tbKhoa.ReadOnly = true;
-            this.tbKhoa.Size = new System.Drawing.Size(323, 30);
-            this.tbKhoa.TabIndex = 19;
             // 
             // label10
             // 
@@ -190,11 +184,10 @@
             // 
             // tbMail
             // 
-            this.tbMail.Font = new System.Drawing.Font("SFU ClearGothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbMail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbMail.Location = new System.Drawing.Point(118, 204);
             this.tbMail.Name = "tbMail";
-            this.tbMail.ReadOnly = true;
-            this.tbMail.Size = new System.Drawing.Size(157, 30);
+            this.tbMail.Size = new System.Drawing.Size(323, 29);
             this.tbMail.TabIndex = 17;
             // 
             // label9
@@ -207,15 +200,6 @@
             this.label9.Size = new System.Drawing.Size(62, 30);
             this.label9.TabIndex = 16;
             this.label9.Text = "Mail:";
-            // 
-            // tbGioiTinh
-            // 
-            this.tbGioiTinh.Font = new System.Drawing.Font("SFU ClearGothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbGioiTinh.Location = new System.Drawing.Point(118, 160);
-            this.tbGioiTinh.Name = "tbGioiTinh";
-            this.tbGioiTinh.ReadOnly = true;
-            this.tbGioiTinh.Size = new System.Drawing.Size(157, 30);
-            this.tbGioiTinh.TabIndex = 15;
             // 
             // label8
             // 
@@ -230,11 +214,11 @@
             // 
             // tbMaGV
             // 
-            this.tbMaGV.Font = new System.Drawing.Font("SFU ClearGothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbMaGV.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbMaGV.Location = new System.Drawing.Point(118, 24);
             this.tbMaGV.Name = "tbMaGV";
             this.tbMaGV.ReadOnly = true;
-            this.tbMaGV.Size = new System.Drawing.Size(157, 30);
+            this.tbMaGV.Size = new System.Drawing.Size(157, 29);
             this.tbMaGV.TabIndex = 13;
             // 
             // label7
@@ -250,11 +234,10 @@
             // 
             // tbTen
             // 
-            this.tbTen.Font = new System.Drawing.Font("SFU ClearGothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbTen.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbTen.Location = new System.Drawing.Point(118, 70);
             this.tbTen.Name = "tbTen";
-            this.tbTen.ReadOnly = true;
-            this.tbTen.Size = new System.Drawing.Size(323, 30);
+            this.tbTen.Size = new System.Drawing.Size(323, 29);
             this.tbTen.TabIndex = 7;
             // 
             // label4
@@ -271,6 +254,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(41)))), ((int)(((byte)(44)))));
+            this.panel4.Controls.Add(this.btnThemGiangVien);
             this.panel4.Controls.Add(this.btnChangeInfo);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.ForeColor = System.Drawing.Color.White;
@@ -278,6 +262,24 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1387, 71);
             this.panel4.TabIndex = 6;
+            // 
+            // btnThemGiangVien
+            // 
+            this.btnThemGiangVien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(41)))), ((int)(((byte)(44)))));
+            this.btnThemGiangVien.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnThemGiangVien.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnThemGiangVien.FlatAppearance.BorderSize = 0;
+            this.btnThemGiangVien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThemGiangVien.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThemGiangVien.ForeColor = System.Drawing.Color.White;
+            this.btnThemGiangVien.Location = new System.Drawing.Point(202, 0);
+            this.btnThemGiangVien.Name = "btnThemGiangVien";
+            this.btnThemGiangVien.Size = new System.Drawing.Size(202, 71);
+            this.btnThemGiangVien.TabIndex = 24;
+            this.btnThemGiangVien.Text = "Thêm giảng viên";
+            this.btnThemGiangVien.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnThemGiangVien.UseVisualStyleBackColor = false;
+            this.btnThemGiangVien.Click += new System.EventHandler(this.btnThemGiangVien_Click_1);
             // 
             // btnChangeInfo
             // 
@@ -313,6 +315,45 @@
             this.panel5.Size = new System.Drawing.Size(10, 767);
             this.panel5.TabIndex = 24;
             // 
+            // btnCapNhatThongTin
+            // 
+            this.btnCapNhatThongTin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(195)))), ((int)(((byte)(115)))));
+            this.btnCapNhatThongTin.Enabled = false;
+            this.btnCapNhatThongTin.FlatAppearance.BorderSize = 0;
+            this.btnCapNhatThongTin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCapNhatThongTin.ForeColor = System.Drawing.Color.Black;
+            this.btnCapNhatThongTin.Location = new System.Drawing.Point(257, 259);
+            this.btnCapNhatThongTin.Name = "btnCapNhatThongTin";
+            this.btnCapNhatThongTin.Size = new System.Drawing.Size(184, 51);
+            this.btnCapNhatThongTin.TabIndex = 20;
+            this.btnCapNhatThongTin.Text = "Cập nhật thông tin";
+            this.btnCapNhatThongTin.UseVisualStyleBackColor = false;
+            this.btnCapNhatThongTin.Visible = false;
+            this.btnCapNhatThongTin.Click += new System.EventHandler(this.btnCapNhatThongTin_Click);
+            // 
+            // cbKhoa
+            // 
+            this.cbKhoa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbKhoa.FormattingEnabled = true;
+            this.cbKhoa.Items.AddRange(new object[] {
+            "Công nghệ thông tin"});
+            this.cbKhoa.Location = new System.Drawing.Point(118, 114);
+            this.cbKhoa.Name = "cbKhoa";
+            this.cbKhoa.Size = new System.Drawing.Size(269, 30);
+            this.cbKhoa.TabIndex = 49;
+            // 
+            // cbGioiTinh
+            // 
+            this.cbGioiTinh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbGioiTinh.FormattingEnabled = true;
+            this.cbGioiTinh.Items.AddRange(new object[] {
+            "Nam",
+            "Nữ"});
+            this.cbGioiTinh.Location = new System.Drawing.Point(118, 158);
+            this.cbGioiTinh.Name = "cbGioiTinh";
+            this.cbGioiTinh.Size = new System.Drawing.Size(127, 30);
+            this.cbGioiTinh.TabIndex = 50;
+            // 
             // UC_GiangVien
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -344,13 +385,11 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox tbGioiTinh;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox tbMaGV;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox tbTen;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox tbKhoa;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox tbMail;
         private System.Windows.Forms.Label label9;
@@ -364,5 +403,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Khoa;
         private System.Windows.Forms.DataGridViewTextBoxColumn gioiTinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn gmail;
+        private System.Windows.Forms.Button btnThemGiangVien;
+        private System.Windows.Forms.Button btnCapNhatThongTin;
+        private System.Windows.Forms.ComboBox cbKhoa;
+        private System.Windows.Forms.ComboBox cbGioiTinh;
     }
 }

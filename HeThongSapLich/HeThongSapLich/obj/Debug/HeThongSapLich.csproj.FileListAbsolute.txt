@@ -35,7 +35,6 @@ E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeTh
 E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\HeThongSapLich\obj\Debug\HeThongSapLich.Main.resources
 E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\HeThongSapLich\obj\Debug\HeThongSapLich.Login.resources
 E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\HeThongSapLich\obj\Debug\HeThongSapLich.Properties.Resources.resources
-E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\HeThongSapLich\obj\Debug\HeThongSapLich.User_Control.UC_LichThi.resources
 E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\HeThongSapLich\obj\Debug\HeThongSapLich.User_Control.UC_ThongTin.resources
 E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\HeThongSapLich\obj\Debug\HeThongSapLich.csproj.GenerateResource.cache
 E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\HeThongSapLich\obj\Debug\HeThongSapLich.exe
@@ -45,3 +44,9 @@ E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeTh
 E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\HeThongSapLich\obj\Debug\HeThongSapLich.User_Control.UC_GiangVien.resources
 E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\HeThongSapLich\obj\Debug\HeThongSapLich.SoBuoiGac.resources
 E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\HeThongSapLich\obj\Debug\HeThongSapLich.ChinhSuaThongTin.resources
+E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\HeThongSapLich\obj\Debug\HeThongSapLich.User_Control.UC_TaoLich.resources
+E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\HeThongSapLich\obj\Debug\HeThongSapLich.User_Control.UC_Lich.resources
+E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\HeThongSapLich\obj\Debug\HeThongSapLich.ThemGiangVien.resources
+E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\HeThongSapLich\obj\Debug\HeThongSapLich.User_Control.UC_SapLich.resources
+E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\HeThongSapLich\obj\Debug\HeThongSapLich.ThemLHP.resources
+E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\HeThongSapLich\obj\Debug\HeThongSapLich.XoaLHP.resources

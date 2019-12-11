@@ -68,7 +68,7 @@ namespace HeThongSapLich
 
             if (KiemTra())
             {
-                if (GiangVienDAO.Instance.ChinhSua(gv))
+                if (GiangVienDAO.Instance.ChinhSua(gv) > 0)
                 {
                     MessageBox.Show("Chỉnh sửa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }

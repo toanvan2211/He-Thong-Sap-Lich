@@ -22,10 +22,24 @@ namespace HeThongSapLich.DAO
         public DataTable LoadDSLop()
         {
             DataTable data = new DataTable();
-
-            data = DataProvider.Instance.ExecuteQuery("USP_LayDSLop");
+            string query = "select * from Lop";
+            data = DataProvider.Instance.ExecuteQuery(query);
 
             return data;   
+        }
+
+        public DataTable LayDSLopTheoMa(string maLop)
+        {
+            string query = "select * from lop where maLop = '" + maLop + "'";
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query);
+            if (dt.Rows.Count > 0)
+            {
+                return dt;
+            }
+            else
+            {
+                return null;
+            }
         }
     }
 }
