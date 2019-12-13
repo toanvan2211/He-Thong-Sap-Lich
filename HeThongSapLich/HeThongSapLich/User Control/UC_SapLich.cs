@@ -377,11 +377,11 @@ namespace HeThongSapLich.User_Control
         {
             byte soBuoiGac = Convert.ToByte(nupSoBuoiGac.Value);
             string maGV = cbMaGV.Text;
-            DataRow row = GacThiDAO.Instance.LayThongTin(maGV);
+            DataRow row = GacThiDAO.Instance.LayThongTin(maGV, maHocKy);
             if (row == null)
             {
                 GacThiDAO.Instance.TaoPhieuGac(maGV, maHocKy);
-                row = GacThiDAO.Instance.LayThongTin(maGV);
+                row = GacThiDAO.Instance.LayThongTin(maGV, maHocKy);
             }
 
             GacThi gt = new GacThi(row);
@@ -408,7 +408,7 @@ namespace HeThongSapLich.User_Control
                         listLichThi.Add(lt);
                     }
 
-                    row = GacThiDAO.Instance.LayThongTin(maGV);
+                    row = GacThiDAO.Instance.LayThongTin(maGV, maHocKy);
                     gt = new GacThi(row);
                     int x = rd.Next(0, listLichThi.Count - 1);
 
@@ -476,12 +476,12 @@ namespace HeThongSapLich.User_Control
                         {
                             if (i == listLichThiTam.Count - 1)
                             {
-                                DataRow row = GacThiDAO.Instance.LayThongTin(Main.maGV);
+                                DataRow row = GacThiDAO.Instance.LayThongTin(Main.maGV, maHocKy);
 
                                 if (row == null)
                                 {
                                     GacThiDAO.Instance.TaoPhieuGac(Main.maGV, maHocKy);
-                                    row = GacThiDAO.Instance.LayThongTin(Main.maGV);
+                                    row = GacThiDAO.Instance.LayThongTin(Main.maGV, maHocKy);
                                 }
 
                                 GacThi gt = new GacThi(row);
@@ -500,12 +500,12 @@ namespace HeThongSapLich.User_Control
                 }
                 else
                 {
-                    DataRow row = GacThiDAO.Instance.LayThongTin(Main.maGV);
+                    DataRow row = GacThiDAO.Instance.LayThongTin(Main.maGV, maHocKy);
 
                     if (row == null)
                     {
                         GacThiDAO.Instance.TaoPhieuGac(Main.maGV, maHocKy);
-                        row = GacThiDAO.Instance.LayThongTin(Main.maGV);
+                        row = GacThiDAO.Instance.LayThongTin(Main.maGV, maHocKy);
                     }
 
                     GacThi gt = new GacThi(row);
@@ -661,14 +661,14 @@ namespace HeThongSapLich.User_Control
         private void btnResetLich_Click(object sender, EventArgs e)
         {
             LichThiDAO.Instance.ResetLichThi();
-            GacThiDAO.Instance.LamMoi("001");
+            GacThiDAO.Instance.LamMoi(maHocKy);
             
             LoadLichThi();
         }
 
         private void btnSoBuoiGac_Click(object sender, EventArgs e)
         {
-            using (SoBuoiGac sbg = new SoBuoiGac())
+            using (frPhieuGac sbg = new frPhieuGac())
             {
                 sbg.ShowDialog();
             }
@@ -677,6 +677,7 @@ namespace HeThongSapLich.User_Control
         private void cbHocKy_SelectedIndexChanged(object sender, EventArgs e)
         {
             maHocKy = listHocKy[cbHocKy.SelectedIndex].MaHocKy;
+            LoadComboBox();
             LoadLichThi();
         }
 

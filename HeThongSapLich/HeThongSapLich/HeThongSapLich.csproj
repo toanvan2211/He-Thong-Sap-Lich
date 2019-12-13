@@ -50,6 +50,12 @@
     <Compile Include="DAO\HocKyDAO.cs" />
     <Compile Include="DAO\LopHocPhanDAO.cs" />
     <Compile Include="DAO\MonDAO.cs" />
+    <Compile Include="Form\DoiMatKhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\DoiMatKhau.Designer.cs">
+      <DependentUpon>DoiMatKhau.cs</DependentUpon>
+    </Compile>
     <Compile Include="DTO\GacThi.cs" />
     <Compile Include="DTO\HocKy.cs" />
     <Compile Include="DAO\DataProvider.cs" />
@@ -65,13 +71,8 @@
     <Compile Include="DTO\GiangVien.cs" />
     <Compile Include="DTO\LichThi.cs" />
     <Compile Include="DTO\Lop.cs" />
+    <Compile Include="DTO\Mon.cs" />
     <Compile Include="DTO\Phong.cs" />
-    <Compile Include="Form\LogOut.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\LogOut.Designer.cs">
-      <DependentUpon>LogOut.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form\Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +114,18 @@
     <Compile Include="Form\ThemLHP.Designer.cs">
       <DependentUpon>ThemLHP.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form\ThemHocKy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\ThemHocKy.Designer.cs">
+      <DependentUpon>ThemHocKy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\ThemMon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\ThemMon.Designer.cs">
+      <DependentUpon>ThemMon.cs</DependentUpon>
+    </Compile>
     <Compile Include="User Control\UC_Lich.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -149,14 +162,26 @@
     <Compile Include="Form\XoaLHP.Designer.cs">
       <DependentUpon>XoaLHP.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form\XoaHocKy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\XoaHocKy.Designer.cs">
+      <DependentUpon>XoaHocKy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\XoaMon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\XoaMon.Designer.cs">
+      <DependentUpon>XoaMon.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form\DoiMatKhau.resx">
+      <DependentUpon>DoiMatKhau.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form\LogOut.resx">
-      <DependentUpon>LogOut.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\ChinhSuaThongTin.resx">
       <DependentUpon>ChinhSuaThongTin.cs</DependentUpon>
@@ -179,6 +204,12 @@
     <EmbeddedResource Include="Form\ThemLHP.resx">
       <DependentUpon>ThemLHP.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\ThemHocKy.resx">
+      <DependentUpon>ThemHocKy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\ThemMon.resx">
+      <DependentUpon>ThemMon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="User Control\UC_Lich.resx">
       <DependentUpon>UC_Lich.cs</DependentUpon>
     </EmbeddedResource>
@@ -197,6 +228,13 @@
     <EmbeddedResource Include="Form\XoaLHP.resx">
       <DependentUpon>XoaLHP.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\XoaHocKy.resx">
+      <DependentUpon>XoaHocKy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\XoaMon.resx">
+      <DependentUpon>XoaMon.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include=".editorconfig" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

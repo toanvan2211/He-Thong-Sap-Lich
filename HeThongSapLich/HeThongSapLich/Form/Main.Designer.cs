@@ -31,12 +31,12 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.pnlLeft = new System.Windows.Forms.Panel();
+            this.btnLichThi = new System.Windows.Forms.Button();
             this.btnTaoLich = new System.Windows.Forms.Button();
             this.pnlClicked = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnThuNho = new System.Windows.Forms.Button();
             this.btnSapLich = new System.Windows.Forms.Button();
             this.btnGiangVien = new System.Windows.Forms.Button();
             this.btnThongTin = new System.Windows.Forms.Button();
@@ -47,19 +47,27 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.lblDay = new System.Windows.Forms.Label();
             this.lblTime = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timerTime = new System.Windows.Forms.Timer(this.components);
             this.pnlControls = new System.Windows.Forms.Panel();
             this.timerPExit = new System.Windows.Forms.Timer(this.components);
-            this.btnLichThi = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pnlLeft.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
             this.pnlExit.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlLeft
@@ -77,6 +85,23 @@
             this.pnlLeft.Name = "pnlLeft";
             this.pnlLeft.Size = new System.Drawing.Size(203, 900);
             this.pnlLeft.TabIndex = 0;
+            // 
+            // btnLichThi
+            // 
+            this.btnLichThi.FlatAppearance.BorderSize = 0;
+            this.btnLichThi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLichThi.Font = new System.Drawing.Font("SFU ClearGothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLichThi.ForeColor = System.Drawing.Color.White;
+            this.btnLichThi.Image = ((System.Drawing.Image)(resources.GetObject("btnLichThi.Image")));
+            this.btnLichThi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLichThi.Location = new System.Drawing.Point(14, 346);
+            this.btnLichThi.Name = "btnLichThi";
+            this.btnLichThi.Size = new System.Drawing.Size(186, 54);
+            this.btnLichThi.TabIndex = 14;
+            this.btnLichThi.Text = "   Lịch thi";
+            this.btnLichThi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLichThi.UseVisualStyleBackColor = true;
+            this.btnLichThi.Click += new System.EventHandler(this.btnLichThi_Click);
             // 
             // btnTaoLich
             // 
@@ -108,7 +133,6 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(78)))), ((int)(((byte)(95)))));
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Controls.Add(this.btnThuNho);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
@@ -136,22 +160,6 @@
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
             // 
-            // btnThuNho
-            // 
-            this.btnThuNho.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnThuNho.FlatAppearance.BorderSize = 0;
-            this.btnThuNho.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThuNho.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThuNho.ForeColor = System.Drawing.Color.White;
-            this.btnThuNho.Image = ((System.Drawing.Image)(resources.GetObject("btnThuNho.Image")));
-            this.btnThuNho.Location = new System.Drawing.Point(149, 50);
-            this.btnThuNho.Name = "btnThuNho";
-            this.btnThuNho.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnThuNho.Size = new System.Drawing.Size(54, 47);
-            this.btnThuNho.TabIndex = 10;
-            this.btnThuNho.UseVisualStyleBackColor = true;
-            this.btnThuNho.Click += new System.EventHandler(this.btnThuNho_Click);
-            // 
             // btnSapLich
             // 
             this.btnSapLich.FlatAppearance.BorderSize = 0;
@@ -167,7 +175,7 @@
             this.btnSapLich.Text = "   Sắp lịch";
             this.btnSapLich.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSapLich.UseVisualStyleBackColor = true;
-            this.btnSapLich.Click += new System.EventHandler(this.btnLichThi_Click);
+            this.btnSapLich.Click += new System.EventHandler(this.btnSapLich_Click);
             // 
             // btnGiangVien
             // 
@@ -296,7 +304,12 @@
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.panel4.Controls.Add(this.pictureBox6);
+            this.panel4.Controls.Add(this.pictureBox4);
+            this.panel4.Controls.Add(this.pictureBox2);
+            this.panel4.Controls.Add(this.pictureBox3);
+            this.panel4.Controls.Add(this.pictureBox5);
             this.panel4.Controls.Add(this.lblDay);
             this.panel4.Controls.Add(this.lblTime);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
@@ -304,6 +317,17 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1397, 73);
             this.panel4.TabIndex = 8;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(235, 73);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 14;
+            this.pictureBox5.TabStop = false;
             // 
             // lblDay
             // 
@@ -329,11 +353,6 @@
             this.lblTime.TabIndex = 12;
             this.lblTime.Text = "HH:MM:SS";
             // 
-            // timer1
-            // 
-            this.timer1.Interval = 1;
-            this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
-            // 
             // timerTime
             // 
             this.timerTime.Interval = 50;
@@ -353,22 +372,49 @@
             this.timerPExit.Interval = 1;
             this.timerPExit.Tick += new System.EventHandler(this.timerPExit_Tick);
             // 
-            // btnLichThi
+            // pictureBox2
             // 
-            this.btnLichThi.FlatAppearance.BorderSize = 0;
-            this.btnLichThi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLichThi.Font = new System.Drawing.Font("SFU ClearGothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLichThi.ForeColor = System.Drawing.Color.White;
-            this.btnLichThi.Image = ((System.Drawing.Image)(resources.GetObject("btnLichThi.Image")));
-            this.btnLichThi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLichThi.Location = new System.Drawing.Point(14, 346);
-            this.btnLichThi.Name = "btnLichThi";
-            this.btnLichThi.Size = new System.Drawing.Size(186, 54);
-            this.btnLichThi.TabIndex = 14;
-            this.btnLichThi.Text = "   Lịch thi";
-            this.btnLichThi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnLichThi.UseVisualStyleBackColor = true;
-            this.btnLichThi.Click += new System.EventHandler(this.btnLichThi_Click_1);
+            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(470, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(235, 73);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 14;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(235, 0);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(235, 73);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 14;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(705, 0);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(235, 73);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 14;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
+            this.pictureBox6.Location = new System.Drawing.Point(940, 0);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(235, 73);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox6.TabIndex = 14;
+            this.pictureBox6.TabStop = false;
             // 
             // Main
             // 
@@ -393,6 +439,11 @@
             this.pnlExit.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -406,14 +457,12 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.Button btnThuNho;
         private System.Windows.Forms.Button btnSapLich;
         private System.Windows.Forms.Button btnGiangVien;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblTime;
-        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Timer timerTime;
         private System.Windows.Forms.Label lblDay;
         private System.Windows.Forms.Panel pnlControls;
@@ -423,6 +472,11 @@
         private System.Windows.Forms.Timer timerPExit;
         private System.Windows.Forms.Button btnTaoLich;
         private System.Windows.Forms.Button btnLichThi;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }
 

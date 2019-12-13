@@ -1,0 +1,7 @@
+﻿[*.cs]
+
+# CS0652: Comparison to integral constant is useless; the constant is outside the range of the type
+dotnet_diagnostic.CS0652.severity = silent
+
+# IDE0040: Add accessibility modifiers
+dotnet_style_require_accessibility_modifiers = always:silent

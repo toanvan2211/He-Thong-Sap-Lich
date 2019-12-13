@@ -89,11 +89,19 @@ namespace HeThongSapLich
                     {
                         MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
+                    else
+                    {
+                        MessageBox.Show("Đã có lỗi xảy ra, vui lòng thử lại sau.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
                 catch (System.Data.SqlClient.SqlException a)
                 {
                     MessageBox.Show("Đã tồn tại mã lớp học phần này.\n Lỗi: " + a.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng nhập đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

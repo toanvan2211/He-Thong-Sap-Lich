@@ -1,6 +1,6 @@
 ﻿namespace HeThongSapLich
 {
-    partial class XoaLHP
+    partial class XoaMon
     {
         /// <summary>
         /// Required designer variable.
@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(XoaLHP));
-            this.label9 = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(XoaMon));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnThoat = new System.Windows.Forms.Button();
+            this.pnl = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.btnDongY = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.btnHuy = new System.Windows.Forms.Button();
-            this.btnDongY = new System.Windows.Forms.Button();
-            this.pnl = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.dgvLichThi = new System.Windows.Forms.DataGridView();
             this.MaLichThi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,19 +49,9 @@
             this.dragControl2 = new QuanLiDienThoai.DragControl();
             this.panel1.SuspendLayout();
             this.pnl.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLichThi)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(210, 17);
-            this.label9.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(601, 21);
-            this.label9.TabIndex = 32;
-            this.label9.Text = "Nếu bạn xóa lớp học phần này, tất cả dữ liệu liên quan về nó sẽ mất vĩnh viễn";
             // 
             // panel1
             // 
@@ -72,15 +62,16 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(8);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1046, 55);
-            this.panel1.TabIndex = 25;
+            this.panel1.Size = new System.Drawing.Size(906, 55);
+            this.panel1.TabIndex = 26;
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(367, 9);
+            this.label1.Location = new System.Drawing.Point(297, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(313, 37);
@@ -97,7 +88,7 @@
             this.btnThoat.Font = new System.Drawing.Font("SFU ClearGothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThoat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(41)))), ((int)(((byte)(44)))));
             this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
-            this.btnThoat.Location = new System.Drawing.Point(989, 0);
+            this.btnThoat.Location = new System.Drawing.Point(849, 0);
             this.btnThoat.Margin = new System.Windows.Forms.Padding(5);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(57, 55);
@@ -105,13 +96,52 @@
             this.btnThoat.UseVisualStyleBackColor = false;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
+            // pnl
+            // 
+            this.pnl.Controls.Add(this.label9);
+            this.pnl.Controls.Add(this.btnDongY);
+            this.pnl.Controls.Add(this.label2);
+            this.pnl.Controls.Add(this.btnHuy);
+            this.pnl.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnl.Location = new System.Drawing.Point(0, 55);
+            this.pnl.Name = "pnl";
+            this.pnl.Size = new System.Drawing.Size(906, 149);
+            this.pnl.TabIndex = 35;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(229, 17);
+            this.label9.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(448, 17);
+            this.label9.TabIndex = 32;
+            this.label9.Text = "Nếu bạn xóa môn này, tất cả dữ liệu liên quan đến nó sẽ mất vĩnh viễn";
+            // 
+            // btnDongY
+            // 
+            this.btnDongY.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(163)))), ((int)(((byte)(0)))));
+            this.btnDongY.FlatAppearance.BorderSize = 0;
+            this.btnDongY.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnDongY.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDongY.Font = new System.Drawing.Font("SFU ClearGothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDongY.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(41)))), ((int)(((byte)(44)))));
+            this.btnDongY.Location = new System.Drawing.Point(340, 88);
+            this.btnDongY.Margin = new System.Windows.Forms.Padding(5);
+            this.btnDongY.Name = "btnDongY";
+            this.btnDongY.Size = new System.Drawing.Size(108, 46);
+            this.btnDongY.TabIndex = 33;
+            this.btnDongY.Text = "Đồng ý";
+            this.btnDongY.UseVisualStyleBackColor = false;
+            this.btnDongY.Click += new System.EventHandler(this.btnDongY_Click);
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(451, 51);
+            this.label2.Location = new System.Drawing.Point(405, 51);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(120, 21);
+            this.label2.Size = new System.Drawing.Size(97, 17);
             this.label2.TabIndex = 32;
             this.label2.Text = "Hãy xác nhận?";
             // 
@@ -123,7 +153,7 @@
             this.btnHuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHuy.Font = new System.Drawing.Font("SFU ClearGothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHuy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(41)))), ((int)(((byte)(44)))));
-            this.btnHuy.Location = new System.Drawing.Point(517, 88);
+            this.btnHuy.Location = new System.Drawing.Point(458, 88);
             this.btnHuy.Margin = new System.Windows.Forms.Padding(5);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(108, 46);
@@ -132,43 +162,14 @@
             this.btnHuy.UseVisualStyleBackColor = false;
             this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
-            // btnDongY
+            // panel2
             // 
-            this.btnDongY.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(163)))), ((int)(((byte)(0)))));
-            this.btnDongY.FlatAppearance.BorderSize = 0;
-            this.btnDongY.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.btnDongY.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDongY.Font = new System.Drawing.Font("SFU ClearGothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDongY.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(41)))), ((int)(((byte)(44)))));
-            this.btnDongY.Location = new System.Drawing.Point(399, 88);
-            this.btnDongY.Margin = new System.Windows.Forms.Padding(5);
-            this.btnDongY.Name = "btnDongY";
-            this.btnDongY.Size = new System.Drawing.Size(108, 46);
-            this.btnDongY.TabIndex = 33;
-            this.btnDongY.Text = "Đồng ý";
-            this.btnDongY.UseVisualStyleBackColor = false;
-            this.btnDongY.Click += new System.EventHandler(this.btnDongY_Click);
-            // 
-            // pnl
-            // 
-            this.pnl.Controls.Add(this.label9);
-            this.pnl.Controls.Add(this.btnDongY);
-            this.pnl.Controls.Add(this.label2);
-            this.pnl.Controls.Add(this.btnHuy);
-            this.pnl.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnl.Location = new System.Drawing.Point(0, 55);
-            this.pnl.Name = "pnl";
-            this.pnl.Size = new System.Drawing.Size(1046, 149);
-            this.pnl.TabIndex = 34;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.dgvLichThi);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 204);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1046, 315);
-            this.panel3.TabIndex = 35;
+            this.panel2.Controls.Add(this.dgvLichThi);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 204);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(906, 364);
+            this.panel2.TabIndex = 36;
             // 
             // dgvLichThi
             // 
@@ -185,8 +186,8 @@
             this.dgvLichThi.Location = new System.Drawing.Point(0, 0);
             this.dgvLichThi.Name = "dgvLichThi";
             this.dgvLichThi.ReadOnly = true;
-            this.dgvLichThi.Size = new System.Drawing.Size(1046, 315);
-            this.dgvLichThi.TabIndex = 1;
+            this.dgvLichThi.Size = new System.Drawing.Size(906, 364);
+            this.dgvLichThi.TabIndex = 2;
             // 
             // MaLichThi
             // 
@@ -232,48 +233,47 @@
             // 
             // dragControl1
             // 
-            this.dragControl1.SelectControl = this.panel1;
+            this.dragControl1.SelectControl = this.label1;
             // 
             // dragControl2
             // 
-            this.dragControl2.SelectControl = this.label1;
+            this.dragControl2.SelectControl = this.panel1;
             // 
-            // XoaLHP
+            // XoaMon
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1046, 519);
-            this.Controls.Add(this.panel3);
+            this.ClientSize = new System.Drawing.Size(906, 568);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.pnl);
             this.Controls.Add(this.panel1);
-            this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(5);
-            this.Name = "XoaLHP";
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "XoaMon";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "XoaLHP";
-            this.Load += new System.EventHandler(this.XoaLHP_Load);
+            this.Text = "XoaMon";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.pnl.ResumeLayout(false);
             this.pnl.PerformLayout();
-            this.panel3.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLichThi)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Label label9;
+
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnThoat;
-        private QuanLiDienThoai.DragControl dragControl1;
+        private System.Windows.Forms.Panel pnl;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btnDongY;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnHuy;
-        private System.Windows.Forms.Button btnDongY;
-        private System.Windows.Forms.Panel pnl;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dgvLichThi;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaLichThi;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaPhong;
@@ -281,6 +281,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn MaLHP;
         private System.Windows.Forms.DataGridViewTextBoxColumn ngayThi;
         private System.Windows.Forms.DataGridViewTextBoxColumn CaThi;
+        private QuanLiDienThoai.DragControl dragControl1;
         private QuanLiDienThoai.DragControl dragControl2;
     }
 }

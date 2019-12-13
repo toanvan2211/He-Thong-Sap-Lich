@@ -40,5 +40,17 @@ namespace HeThongSapLich.DAO
                 return "null";
             }
         }
+
+        public int ThemHocKy(string maHocKy, string tenHocKy, DateTime tgbd, DateTime tgkt)
+        {
+            string query = "USP_ThemHocKy @maHocKy , @tenHocKy , @tgbd , @tgkt";
+            return DataProvider.Instance.ExecuteNonQuery(query, new object[] { maHocKy, tenHocKy, tgbd, tgkt });
+        }
+
+        public int XoaHocKy(string maHocKy)
+        {
+            string query = "delete hocKy where maHocKy = '" + maHocKy + "'";
+            return DataProvider.Instance.ExecuteNonQuery(query);
+        }
     }
 }

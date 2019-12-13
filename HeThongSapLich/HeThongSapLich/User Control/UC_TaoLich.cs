@@ -15,7 +15,8 @@ namespace HeThongSapLich.User_Control
     public partial class UC_TaoLich : UserControl
     {
         string maKyThi, maLich;
-        public static string maLHP;
+        public static string maLHP, maMon, maHocKy;
+        List<Mon> listMon = new List<Mon>();
         public UC_TaoLich()
         {
             InitializeComponent();
@@ -35,6 +36,19 @@ namespace HeThongSapLich.User_Control
             cbCaThi.SelectedIndex = 0;
         }
 
+        void LayMaHocKy()
+        {
+            List<HocKy> listHK = new List<HocKy>();
+            DataTable dt = HocKyDAO.Instance.LayDSHocKy();
+            foreach (DataRow item in dt.Rows)
+            {
+                HocKy hk = new HocKy(item);
+                listHK.Add(hk);
+            }
+
+            maHocKy = listHK[cbHocKy.SelectedIndex].MaHocKy;
+        }
+
         void LoadDSLichThi()
         {
             if (maKyThi != "null" || !string.IsNullOrEmpty(maKyThi))
@@ -46,9 +60,17 @@ namespace HeThongSapLich.User_Control
         void LoadMon()
         {
             DataTable dt = MonDAO.Instance.LayDSMon();
+            listMon.Clear();
+
+            foreach (DataRow item in dt.Rows)
+            {
+                Mon m = new Mon(item);
+                listMon.Add(m);
+            }
 
             cbMon.DataSource = dt;
             cbMon.DisplayMember = "ten";
+            cbMon.SelectedIndex = 0;
         }
 
         void LoadKyThi()
@@ -98,7 +120,7 @@ namespace HeThongSapLich.User_Control
         {
             if (!string.IsNullOrEmpty(tbMa.Text))
             {
-                string maHocKy = HocKyDAO.Instance.LayMaHocKy(cbHocKy.Text);
+                LayMaHocKy();
                 try
                 {
                     LichThiDAO.Instance.ThemLichThi(tbMa.Text, cbPhong.Text, cbLHP.Text, dpNgayThi.Value, cbCaThi.Text, maHocKy);
@@ -141,6 +163,51 @@ namespace HeThongSapLich.User_Control
                     }
                 }
             }
+        }
+
+        private void btnThemMon_Click(object sender, EventArgs e)
+        {
+            using (ThemMon tm = new ThemMon())
+            {
+                tm.ShowDialog();
+            }
+            LoadMon();
+        }
+
+        private void btnXoaMon_Click(object sender, EventArgs e)
+        {
+            maMon = listMon[cbMon.SelectedIndex].MaMon;
+
+            using (XoaMon xm = new XoaMon())
+            {
+                xm.ShowDialog();
+            }
+            LoadMon();
+            LoadDSLichThi();
+        }
+
+        private void btnThemHocKy_Click(object sender, EventArgs e)
+        {
+            using (ThemHocKy thk = new ThemHocKy())
+            {
+                thk.ShowDialog();
+            }
+            LoadHocKy();
+            LoadKyThi();
+        }
+
+        private void btnXoaHocKy_Click(object sender, EventArgs e)
+        {
+            LayMaHocKy();
+
+            using (XoaHocKy xhk = new XoaHocKy())
+            {
+                xhk.ShowDialog();
+            }
+
+            LoadHocKy();
+            LoadKyThi();
+            LoadDSLichThi();
         }
 
         private void btnThemLHP_Click(object sender, EventArgs e)

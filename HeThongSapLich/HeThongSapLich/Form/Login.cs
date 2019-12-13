@@ -13,8 +13,8 @@ namespace HeThongSapLich
 {
     public partial class Login : Form
     {
-        public static string user;
-        public static string LoaiTaiKhoan;
+        public static string user, LoaiTaiKhoan, matKhauNow;
+
         public Login()
         {
             InitializeComponent();
@@ -33,6 +33,7 @@ namespace HeThongSapLich
             if (KiemTra(TaiKhoan, MatKhau))
             {
                 user = TaiKhoan;
+                matKhauNow = MatKhau;
                 LoaiTaiKhoan = TaiKhoanDAO.Instance.LayLoaiTaiKhoan(TaiKhoan);
                 using (Main m = new Main())
                 {

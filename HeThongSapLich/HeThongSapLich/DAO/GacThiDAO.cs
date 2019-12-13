@@ -38,9 +38,9 @@ namespace HeThongSapLich.DAO
             return DataProvider.Instance.ExecuteNonQuery(query);
         }
 
-        public DataRow LayThongTin(string maGiangVien)
+        public DataRow LayThongTin(string maGiangVien, string maHocKy)
         {
-            string query = "select * from gacthi where maGiangVien = '" + maGiangVien + "'";
+            string query = "select * from gacthi where maGiangVien = '" + maGiangVien + "' and maHocKy = '" + maHocKy + "'";
             DataTable dt = DataProvider.Instance.ExecuteQuery(query);
             if (dt.Rows.Count != 0)
             {
@@ -54,7 +54,7 @@ namespace HeThongSapLich.DAO
 
         public int LamMoi(string maHocKy)
         {
-            string query = "update gacThi set soBuoiGac = 0 where maHocKy = '" + maHocKy + "'";
+            string query = "delete gacThi where maHocKy = '" + maHocKy + "'";
             return DataProvider.Instance.ExecuteNonQuery(query);
         }
 

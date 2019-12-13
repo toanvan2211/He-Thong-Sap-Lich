@@ -51,7 +51,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(219)))), ((int)(((byte)(148)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(83)))), ((int)(((byte)(83)))));
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btnThoat);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -64,6 +64,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(16, 10);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(142, 21);

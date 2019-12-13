@@ -54,5 +54,11 @@ namespace HeThongSapLich.DAO
             string query = "USP_ThemGiangVien1 @maGV , @ten , @Khoa , @GioiTinh";
             return DataProvider.Instance.ExecuteNonQuery(query, new object[] { gv.MaGV, gv.Ten, gv.Khoa, gv.GioiTinh});
         }
+
+        public int XoaGiangVien(string maGiangVien)
+        {
+            string query = "delete giangVien where maGiangVien = '" + maGiangVien + "'";
+            return DataProvider.Instance.ExecuteNonQuery(query);
+        }
     }
 }

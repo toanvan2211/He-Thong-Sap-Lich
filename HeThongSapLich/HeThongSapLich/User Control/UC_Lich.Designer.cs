@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.cbKyThi = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvLichThi = new System.Windows.Forms.DataGridView();
             this.MaLichThi = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,20 +59,12 @@
             this.panel1.Size = new System.Drawing.Size(1597, 106);
             this.panel1.TabIndex = 0;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(30, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(165, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Danh sách lịch thi";
-            // 
             // cbKyThi
             // 
+            this.cbKyThi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(83)))), ((int)(((byte)(83)))));
             this.cbKyThi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbKyThi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbKyThi.ForeColor = System.Drawing.Color.White;
             this.cbKyThi.FormattingEnabled = true;
             this.cbKyThi.Location = new System.Drawing.Point(576, 56);
             this.cbKyThi.Name = "cbKyThi";
@@ -83,12 +75,23 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(415, 55);
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Teal;
+            this.label8.Location = new System.Drawing.Point(473, 56);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(113, 25);
+            this.label8.Size = new System.Drawing.Size(97, 21);
             this.label8.TabIndex = 5;
             this.label8.Text = "Chọn kì thi:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(30, 23);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(165, 25);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Danh sách lịch thi";
             // 
             // panel2
             // 
@@ -118,6 +121,7 @@
             this.dgvLichThi.ReadOnly = true;
             this.dgvLichThi.Size = new System.Drawing.Size(1597, 671);
             this.dgvLichThi.TabIndex = 2;
+            this.dgvLichThi.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLichThi_CellClick);
             // 
             // MaLichThi
             // 

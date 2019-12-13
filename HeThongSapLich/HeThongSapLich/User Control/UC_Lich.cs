@@ -43,5 +43,14 @@ namespace HeThongSapLich.User_Control
         {
             LoadLichThi();
         }
+
+        private void dgvLichThi_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                dgvLichThi.CurrentCell.Selected = true;
+            }
+            catch { }
+        }
     }
 }

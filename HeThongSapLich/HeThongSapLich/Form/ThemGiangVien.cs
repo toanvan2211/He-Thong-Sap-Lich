@@ -14,6 +14,8 @@ namespace HeThongSapLich
 {
     public partial class ThemGiangVien : Form
     {
+        string maGV;
+
         public ThemGiangVien()
         {
             InitializeComponent();
@@ -22,10 +24,17 @@ namespace HeThongSapLich
 
         }
 
+        int TaoTaiKhoan()
+        {
+            return TaiKhoanDAO.Instance.TaoTaiKhoan(maGV);
+        }
+
         void ThemGV()
         {
             if (!string.IsNullOrEmpty(tbMaGV.Text) && !string.IsNullOrEmpty(tbTen.Text))
             {
+                maGV = tbMaGV.Text;
+
                 if (!string.IsNullOrEmpty(tbGmail.Text))
                 {
                     GiangVien gv = new GiangVien();
@@ -37,7 +46,14 @@ namespace HeThongSapLich
 
                     if (GiangVienDAO.Instance.ThemGiangVien(gv) != 0)
                     {
-                        MessageBox.Show("Thêm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        if (TaoTaiKhoan() != 0)
+                        {
+                            MessageBox.Show("Thêm giảng viên thành công!\n Tài khoản: '" + maGV + "'. Mật khẩu: '1'", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            GiangVienDAO.Instance.XoaGiangVien(maGV);
+                        }
                     }
                     else
                     {
@@ -54,13 +70,24 @@ namespace HeThongSapLich
 
                     if (GiangVienDAO.Instance.ThemGiangVien1(gv) != 0)
                     {
-                        MessageBox.Show("Thêm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        if (TaoTaiKhoan() != 0)
+                        {
+                            MessageBox.Show("Thêm giảng viên thành công!\n Tài khoản: '" + maGV + "'. Mật khẩu: '1'", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            GiangVienDAO.Instance.XoaGiangVien(maGV);
+                        }
                     }
                     else
                     {
                         MessageBox.Show("Đã có lỗi xảy ra, vui lòng thử lại sau!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng nhập đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -70,6 +97,11 @@ namespace HeThongSapLich
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Close();
         }

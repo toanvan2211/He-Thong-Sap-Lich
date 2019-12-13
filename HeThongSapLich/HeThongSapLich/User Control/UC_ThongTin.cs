@@ -47,5 +47,13 @@ namespace HeThongSapLich.User_Control
             }
             LoadThongTin();
         }
+
+        private void btnDoiMatKhau_Click(object sender, EventArgs e)
+        {
+            using (DoiMatKhau dmt = new DoiMatKhau())
+            {
+                dmt.ShowDialog();
+            }
+        }
     }
 }

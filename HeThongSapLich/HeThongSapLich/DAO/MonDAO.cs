@@ -39,5 +39,23 @@ namespace HeThongSapLich.DAO
                 return null;
             }
         }
+
+        public int ThemMon(string maMon, string tenMon)
+        {
+            string query = "USP_ThemMon @maMon , @tenMon";
+            return DataProvider.Instance.ExecuteNonQuery(query, new object[] { maMon, tenMon });
+        }
+
+        public int XoaMon(string maMon)
+        {
+            string query = "delete Mon where maMon = '" + maMon + "'";
+            return DataProvider.Instance.ExecuteNonQuery(query);
+        }
+
+        public DataTable LayDSLichThiTheoMaMon(string maMon)
+        {
+            string query = "select lt.* from lichThi lt, LopHocPhan lhp where lt.maLHP = lhp.maLHP and lhp.maMon = '" + maMon + "'";
+            return DataProvider.Instance.ExecuteQuery(query);
+        }
     }
 }

@@ -40,5 +40,37 @@ namespace HeThongSapLich.DAO
 
             return (string)row["magiangvien"];
         }
+
+        public int TaoTaiKhoan(string maGiangVien)
+        {
+            string query = "USP_TaoTaiKhoan @maGiangVien";
+            return DataProvider.Instance.ExecuteNonQuery(query, new object[] { maGiangVien });
+        }
+
+        public int NangQuyenTaiKhoan(string taiKhoan)
+        {
+            string query = "USP_NangQuyenTaiKhoan @taiKhoan";
+            return DataProvider.Instance.ExecuteNonQuery(query, new object[] { taiKhoan });
+        }
+
+        public int DoiMatKhau(string taiKhoan, string matKhau)
+        {
+            string query = "USP_DoiMatKhau @taiKhoan , @matKhau";
+            return DataProvider.Instance.ExecuteNonQuery(query, new object[] { taiKhoan, matKhau });
+        }
+
+        public string LayTenTaiKhoan(string maGiangVien)
+        {
+            string query = "select * from taikhoan where maGiangVien = '" + maGiangVien + "'";
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query);
+            if (dt.Rows.Count > 0)
+            {
+                return dt.Rows[0]["taiKhoan"].ToString();
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }

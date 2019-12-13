@@ -247,6 +247,7 @@
             this.btnXoaHocKy.Size = new System.Drawing.Size(35, 35);
             this.btnXoaHocKy.TabIndex = 14;
             this.btnXoaHocKy.UseVisualStyleBackColor = false;
+            this.btnXoaHocKy.Click += new System.EventHandler(this.btnXoaHocKy_Click);
             // 
             // btnThemHocKy
             // 
@@ -259,6 +260,7 @@
             this.btnThemHocKy.Size = new System.Drawing.Size(35, 35);
             this.btnThemHocKy.TabIndex = 13;
             this.btnThemHocKy.UseVisualStyleBackColor = false;
+            this.btnThemHocKy.Click += new System.EventHandler(this.btnThemHocKy_Click);
             // 
             // panel7
             // 
@@ -299,6 +301,7 @@
             this.btnXoaMon.Size = new System.Drawing.Size(35, 35);
             this.btnXoaMon.TabIndex = 18;
             this.btnXoaMon.UseVisualStyleBackColor = false;
+            this.btnXoaMon.Click += new System.EventHandler(this.btnXoaMon_Click);
             // 
             // btnThemMon
             // 
@@ -311,6 +314,7 @@
             this.btnThemMon.Size = new System.Drawing.Size(35, 35);
             this.btnThemMon.TabIndex = 17;
             this.btnThemMon.UseVisualStyleBackColor = false;
+            this.btnThemMon.Click += new System.EventHandler(this.btnThemMon_Click);
             // 
             // cbMon
             // 
