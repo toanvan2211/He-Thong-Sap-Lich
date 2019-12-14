@@ -51,7 +51,7 @@ namespace HeThongSapLich
                         MessageBox.Show("Đã có lỗi xảy ra, vui lòng thử lại sau.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
-                catch (Exception a)
+                catch (System.Data.SqlClient.SqlException a)
                 {
                     MessageBox.Show("Đã tồn tại môn này.\n Lỗi: " + a.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }

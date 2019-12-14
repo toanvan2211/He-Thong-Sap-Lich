@@ -31,17 +31,21 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_ThongTin));
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnDoiMatKhau = new System.Windows.Forms.Button();
             this.lbGmail = new System.Windows.Forms.Label();
             this.btnChinhSua = new System.Windows.Forms.Button();
             this.lbGioiTinh = new System.Windows.Forms.Label();
             this.lbKhoa = new System.Windows.Forms.Label();
             this.lbTenGiangVien = new System.Windows.Forms.Label();
             this.lbMaGV = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbAnhHoSo = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnDoiMatKhau = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.pbThemAnh = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAnhHoSo)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbThemAnh)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -69,6 +73,21 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(731, 528);
             this.panel1.TabIndex = 2;
+            // 
+            // btnDoiMatKhau
+            // 
+            this.btnDoiMatKhau.BackColor = System.Drawing.Color.OrangeRed;
+            this.btnDoiMatKhau.FlatAppearance.BorderSize = 0;
+            this.btnDoiMatKhau.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDoiMatKhau.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDoiMatKhau.ForeColor = System.Drawing.Color.Black;
+            this.btnDoiMatKhau.Location = new System.Drawing.Point(151, 460);
+            this.btnDoiMatKhau.Name = "btnDoiMatKhau";
+            this.btnDoiMatKhau.Size = new System.Drawing.Size(133, 52);
+            this.btnDoiMatKhau.TabIndex = 14;
+            this.btnDoiMatKhau.Text = "Đổi mật khẩu";
+            this.btnDoiMatKhau.UseVisualStyleBackColor = false;
+            this.btnDoiMatKhau.Click += new System.EventHandler(this.btnDoiMatKhau_Click);
             // 
             // lbGmail
             // 
@@ -145,16 +164,18 @@
             this.lbMaGV.TabIndex = 5;
             this.lbMaGV.Text = "Mã giảng viên:";
             // 
-            // pictureBox1
+            // pbAnhHoSo
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(172, 155);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(168, 191);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
+            this.pbAnhHoSo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbAnhHoSo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(41)))), ((int)(((byte)(44)))));
+            this.pbAnhHoSo.Location = new System.Drawing.Point(10, 8);
+            this.pbAnhHoSo.Name = "pbAnhHoSo";
+            this.pbAnhHoSo.Size = new System.Drawing.Size(168, 191);
+            this.pbAnhHoSo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbAnhHoSo.TabIndex = 3;
+            this.pbAnhHoSo.TabStop = false;
             // 
             // label3
             // 
@@ -167,27 +188,36 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Ảnh hồ sơ";
             // 
-            // btnDoiMatKhau
+            // panel2
             // 
-            this.btnDoiMatKhau.BackColor = System.Drawing.Color.OrangeRed;
-            this.btnDoiMatKhau.FlatAppearance.BorderSize = 0;
-            this.btnDoiMatKhau.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDoiMatKhau.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDoiMatKhau.ForeColor = System.Drawing.Color.Black;
-            this.btnDoiMatKhau.Location = new System.Drawing.Point(151, 460);
-            this.btnDoiMatKhau.Name = "btnDoiMatKhau";
-            this.btnDoiMatKhau.Size = new System.Drawing.Size(133, 52);
-            this.btnDoiMatKhau.TabIndex = 14;
-            this.btnDoiMatKhau.Text = "Đổi mật khẩu";
-            this.btnDoiMatKhau.UseVisualStyleBackColor = false;
-            this.btnDoiMatKhau.Click += new System.EventHandler(this.btnDoiMatKhau_Click);
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.panel2.Controls.Add(this.pbThemAnh);
+            this.panel2.Controls.Add(this.pbAnhHoSo);
+            this.panel2.Location = new System.Drawing.Point(168, 127);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(188, 208);
+            this.panel2.TabIndex = 5;
+            // 
+            // pbThemAnh
+            // 
+            this.pbThemAnh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(41)))), ((int)(((byte)(44)))));
+            this.pbThemAnh.Enabled = false;
+            this.pbThemAnh.Image = ((System.Drawing.Image)(resources.GetObject("pbThemAnh.Image")));
+            this.pbThemAnh.Location = new System.Drawing.Point(68, 75);
+            this.pbThemAnh.Name = "pbThemAnh";
+            this.pbThemAnh.Size = new System.Drawing.Size(54, 52);
+            this.pbThemAnh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbThemAnh.TabIndex = 4;
+            this.pbThemAnh.TabStop = false;
+            this.pbThemAnh.Visible = false;
+            this.pbThemAnh.Click += new System.EventHandler(this.ptbThemAnh_Click);
             // 
             // UC_ThongTin
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(41)))), ((int)(((byte)(44)))));
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
             this.Font = new System.Drawing.Font("SFU ClearGothic", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -195,7 +225,9 @@
             this.Size = new System.Drawing.Size(1397, 777);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAnhHoSo)).EndInit();
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbThemAnh)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -204,7 +236,7 @@
         #endregion
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbAnhHoSo;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lbGioiTinh;
         private System.Windows.Forms.Label lbKhoa;
@@ -213,5 +245,7 @@
         private System.Windows.Forms.Button btnChinhSua;
         private System.Windows.Forms.Label lbGmail;
         private System.Windows.Forms.Button btnDoiMatKhau;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.PictureBox pbThemAnh;
     }
 }

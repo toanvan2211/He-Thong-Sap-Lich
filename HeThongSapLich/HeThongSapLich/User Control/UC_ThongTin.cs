@@ -20,6 +20,28 @@ namespace HeThongSapLich.User_Control
 
             LoadThongTin();
 
+            if (pbAnhHoSo.Image == null)
+            {
+                pbThemAnh.Visible = true;
+                pbThemAnh.Enabled = true;
+            }
+
+        }
+
+        void ThemHinh()
+        {
+            using (OpenFileDialog dlg = new OpenFileDialog())
+            {
+                dlg.Title = "Open Image";
+                dlg.Filter = "Pictures files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png)|*.jpg; *.jpeg; *.jpe; *.jfif; *.png|All files (*.*)|*.*";
+
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+                    pbAnhHoSo.Image = new Bitmap(dlg.FileName);
+                    pbThemAnh.Visible = false;
+                    pbThemAnh.Enabled = false;
+                }
+            }
         }
 
         void LoadThongTin()
@@ -54,6 +76,11 @@ namespace HeThongSapLich.User_Control
             {
                 dmt.ShowDialog();
             }
+        }
+
+        private void ptbThemAnh_Click(object sender, EventArgs e)
+        {
+            ThemHinh();
         }
     }
 }

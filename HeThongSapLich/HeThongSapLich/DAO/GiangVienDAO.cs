@@ -60,5 +60,11 @@ namespace HeThongSapLich.DAO
             string query = "delete giangVien where maGiangVien = '" + maGiangVien + "'";
             return DataProvider.Instance.ExecuteNonQuery(query);
         }
+
+        public DataTable LayGmail(string gmail)
+        {
+            string query = "select * from giangVien where gmail = '" + gmail + "'";
+            return DataProvider.Instance.ExecuteQuery(query);
+        }
     }
 }

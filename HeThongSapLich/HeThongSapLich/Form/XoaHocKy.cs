@@ -49,7 +49,7 @@ namespace HeThongSapLich
                     this.Close();
                 }
             }
-            catch (Exception a)
+            catch (System.Data.SqlClient.SqlException a)
             {
                 MessageBox.Show("Đã xảy ra lỗi, vui lòng thử lại sau.\n Lỗi: " + a.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.Close();

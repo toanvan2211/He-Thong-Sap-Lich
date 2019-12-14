@@ -44,20 +44,27 @@ namespace HeThongSapLich
                     gv.GioiTinh = cbGioiTinh.Text;
                     gv.Gmail = tbGmail.Text;
 
-                    if (GiangVienDAO.Instance.ThemGiangVien(gv) != 0)
+                    try
                     {
-                        if (TaoTaiKhoan() != 0)
+                        if (GiangVienDAO.Instance.ThemGiangVien(gv) != 0)
                         {
-                            MessageBox.Show("Thêm giảng viên thành công!\n Tài khoản: '" + maGV + "'. Mật khẩu: '1'", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            if (TaoTaiKhoan() != 0)
+                            {
+                                MessageBox.Show("Thêm giảng viên thành công!\nTài khoản: '" + maGV + "'. Mật khẩu: '1'", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            else
+                            {
+                                GiangVienDAO.Instance.XoaGiangVien(maGV);
+                            }
                         }
                         else
                         {
-                            GiangVienDAO.Instance.XoaGiangVien(maGV);
+                            MessageBox.Show("Đã có lỗi xảy ra, vui lòng thử lại sau!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
-                    else
+                    catch (System.Data.SqlClient.SqlException a)
                     {
-                        MessageBox.Show("Đã có lỗi xảy ra, vui lòng thử lại sau!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Mã giảng viên đã tồn tại.\nLỗi: " + a.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
@@ -68,20 +75,27 @@ namespace HeThongSapLich
                     gv.Khoa = cbKhoa.Text;
                     gv.GioiTinh = cbGioiTinh.Text;
 
-                    if (GiangVienDAO.Instance.ThemGiangVien1(gv) != 0)
+                    try
                     {
-                        if (TaoTaiKhoan() != 0)
+                        if (GiangVienDAO.Instance.ThemGiangVien1(gv) != 0)
                         {
-                            MessageBox.Show("Thêm giảng viên thành công!\n Tài khoản: '" + maGV + "'. Mật khẩu: '1'", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            if (TaoTaiKhoan() != 0)
+                            {
+                                MessageBox.Show("Thêm giảng viên thành công!\nTài khoản: '" + maGV + "'. Mật khẩu: '1'", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            else
+                            {
+                                GiangVienDAO.Instance.XoaGiangVien(maGV);
+                            }
                         }
                         else
                         {
-                            GiangVienDAO.Instance.XoaGiangVien(maGV);
+                            MessageBox.Show("Đã có lỗi xảy ra, vui lòng thử lại sau!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
-                    else
+                    catch (System.Data.SqlClient.SqlException a)
                     {
-                        MessageBox.Show("Đã có lỗi xảy ra, vui lòng thử lại sau!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Mã giảng viên đã tồn tại.\nLỗi: " + a.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }

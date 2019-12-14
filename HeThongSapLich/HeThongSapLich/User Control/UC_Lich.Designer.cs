@@ -42,6 +42,7 @@
             this.mon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ngayThi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CaThi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnXuatFile = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLichThi)).BeginInit();
@@ -49,6 +50,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnXuatFile);
             this.panel1.Controls.Add(this.cbKyThi);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label1);
@@ -56,7 +58,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1597, 106);
+            this.panel1.Size = new System.Drawing.Size(1397, 106);
             this.panel1.TabIndex = 0;
             // 
             // cbKyThi
@@ -99,7 +101,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 106);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1597, 671);
+            this.panel2.Size = new System.Drawing.Size(1397, 671);
             this.panel2.TabIndex = 1;
             // 
             // dgvLichThi
@@ -119,7 +121,7 @@
             this.dgvLichThi.Location = new System.Drawing.Point(0, 0);
             this.dgvLichThi.Name = "dgvLichThi";
             this.dgvLichThi.ReadOnly = true;
-            this.dgvLichThi.Size = new System.Drawing.Size(1597, 671);
+            this.dgvLichThi.Size = new System.Drawing.Size(1397, 671);
             this.dgvLichThi.TabIndex = 2;
             this.dgvLichThi.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLichThi_CellClick);
             // 
@@ -179,6 +181,22 @@
             this.CaThi.Name = "CaThi";
             this.CaThi.ReadOnly = true;
             // 
+            // btnXuatFile
+            // 
+            this.btnXuatFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(196)))), ((int)(((byte)(129)))));
+            this.btnXuatFile.FlatAppearance.BorderSize = 0;
+            this.btnXuatFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXuatFile.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXuatFile.ForeColor = System.Drawing.Color.Black;
+            this.btnXuatFile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXuatFile.Location = new System.Drawing.Point(1222, 47);
+            this.btnXuatFile.Name = "btnXuatFile";
+            this.btnXuatFile.Size = new System.Drawing.Size(157, 41);
+            this.btnXuatFile.TabIndex = 14;
+            this.btnXuatFile.Text = "Xuất file excel";
+            this.btnXuatFile.UseVisualStyleBackColor = false;
+            this.btnXuatFile.Click += new System.EventHandler(this.btnXuatFile_Click);
+            // 
             // UC_Lich
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -189,7 +207,7 @@
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "UC_Lich";
-            this.Size = new System.Drawing.Size(1597, 777);
+            this.Size = new System.Drawing.Size(1397, 777);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -214,5 +232,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn mon;
         private System.Windows.Forms.DataGridViewTextBoxColumn ngayThi;
         private System.Windows.Forms.DataGridViewTextBoxColumn CaThi;
+        private System.Windows.Forms.Button btnXuatFile;
     }
 }

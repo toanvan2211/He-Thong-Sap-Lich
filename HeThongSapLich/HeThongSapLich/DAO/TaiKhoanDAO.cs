@@ -72,5 +72,19 @@ namespace HeThongSapLich.DAO
                 return null;
             }
         }
+
+        public string LayTenTaiKhoan1(string gmail)
+        {
+            string query = "select tk.taiKhoan from taiKhoan tk, giangVien gv where tk.maGiangVien = gv.maGiangVien and gv.gmail = '" + gmail + "'";
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query);
+            if (dt.Rows.Count != 0)
+            {
+                return dt.Rows[0]["taiKhoan"].ToString();
+            }
+            else
+            {
+                return null;
+            }            
+        }
     }
 }

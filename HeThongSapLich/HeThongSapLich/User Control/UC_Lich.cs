@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using HeThongSapLich.DAO;
+using HeThongSapLich.Class;
+using System.IO;
 
 namespace HeThongSapLich.User_Control
 {
@@ -51,6 +53,16 @@ namespace HeThongSapLich.User_Control
                 dgvLichThi.CurrentCell.Selected = true;
             }
             catch { }
+        }
+
+        private void btnXuatFile_Click(object sender, EventArgs e)
+        {
+            string titles = "Danh sách lịch thi " + cbKyThi.Text;
+
+            DataTable dt = (DataTable)dgvLichThi.DataSource;
+                        
+            ExportToExcel excel = new ExportToExcel();
+            excel.Export(dt, "sheet 1", titles);
         }
     }
 }

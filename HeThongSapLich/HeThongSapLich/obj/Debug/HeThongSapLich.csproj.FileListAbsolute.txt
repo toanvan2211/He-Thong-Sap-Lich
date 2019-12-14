@@ -54,3 +54,4 @@ E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeTh
 E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\HeThongSapLich\obj\Debug\HeThongSapLich.XoaHocKy.resources
 E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\HeThongSapLich\obj\Debug\HeThongSapLich.frPhieuGac.resources
 E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\HeThongSapLich\obj\Debug\HeThongSapLich.DoiMatKhau.resources
+E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\HeThongSapLich\obj\Debug\HeThongSapLich.QuenMatKhau.resources
