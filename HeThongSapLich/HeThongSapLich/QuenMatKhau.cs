@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Linq;
 using System.Net.Mail;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -17,6 +18,7 @@ namespace HeThongSapLich
     {
         int tgMaXacNhan = 300;
         string maXacNhan, gmail;
+        bool guiThanhCong = false;
 
         public QuenMatKhau()
         {
@@ -24,15 +26,31 @@ namespace HeThongSapLich
         }
 
         void GuiMail(string maXacNhan, string nguoiNhan, string tenGiangVien)
-        {            
-            string body = "Chào " + tenGiangVien + ", \n" + "\nĐây là mã xác nhận được gửi từ hệ thống sắp lịch tự động." +
-                " \nMã xác nhận của bạn là: " + maXacNhan + "." +
-                " \nMã này có hiệu lực trong vòng 5 phút.";
+        {
+            string body = "Chào " + tenGiangVien + ",\n" + "\nĐây là mã xác nhận được gửi từ hệ thống sắp lịch tự động." +
+                " \n Mã xác nhận của bạn là: " + maXacNhan + "." +
+                " \n Mã này có hiệu lực trong vòng 5 phút.";
 
             string tieuDe = "Mã xác nhận lấy lại mật khẩu";
 
-            SendEmail.Instance.GuiMail(tieuDe, body, nguoiNhan);
-            timer1.Start();
+            Thread th = new Thread(() =>
+            {
+                try
+                {
+                    SendEmail.Instance.GuiMail(tieuDe, body, nguoiNhan);
+                    guiThanhCong = true;
+                }
+                catch (Exception a)
+                {
+                    MessageBox.Show("Xảy ra lỗi khi gửi mail.\nLỗi: " + a.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            });
+            th.Start();
+
+            if (guiThanhCong)
+            {
+                timer1.Start();
+            }
         }
 
         string TaoMaXacNhan()

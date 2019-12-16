@@ -30,25 +30,18 @@ namespace HeThongSapLich.Class
 
             string result = "Đã gửi mã xác nhận, vui lòng kiểm tra mail!";
 
-            try
-            {
-                MailMessage mail = new MailMessage();
-                mail.To.Add(NguoiNhan);
-                mail.From = new MailAddress(senderID);
-                mail.Subject = tieuDe;
-                mail.Body = body;
-                mail.IsBodyHtml = true;
-                SmtpClient smtp = new SmtpClient();
-                smtp.Host = "smtp.gmail.com";
-                smtp.Credentials = new System.Net.NetworkCredential(senderID, senderPassword);
-                smtp.Port = 587;
-                smtp.EnableSsl = true;
-                smtp.Send(mail);
-            }
-            catch (Exception a)
-            {
-                result = "Problem occurred: " + a.Message;
-            }
+            MailMessage mail = new MailMessage();
+            mail.From = new MailAddress(senderID, "[Hệ thống sắp lịch tự động]");
+            mail.To.Add(nguoiNhan);
+            mail.Subject = tieuDe;
+            mail.Body = body;
+            mail.IsBodyHtml = true;
+            SmtpClient smtp = new SmtpClient();
+            smtp.Host = "smtp.gmail.com";
+            smtp.Credentials = new System.Net.NetworkCredential(senderID, senderPassword);
+            smtp.Port = 587;
+            smtp.EnableSsl = true;
+            smtp.Send(mail);
 
             MessageBox.Show(result, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }

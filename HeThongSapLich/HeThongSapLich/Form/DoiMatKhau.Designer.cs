@@ -90,6 +90,7 @@
             this.tbMatKhauMoi.Name = "tbMatKhauMoi";
             this.tbMatKhauMoi.Size = new System.Drawing.Size(207, 25);
             this.tbMatKhauMoi.TabIndex = 2;
+            this.tbMatKhauMoi.UseSystemPasswordChar = true;
             // 
             // label2
             // 
@@ -133,6 +134,7 @@
             this.tbMatKhauCu.Name = "tbMatKhauCu";
             this.tbMatKhauCu.Size = new System.Drawing.Size(207, 25);
             this.tbMatKhauCu.TabIndex = 1;
+            this.tbMatKhauCu.UseSystemPasswordChar = true;
             // 
             // label9
             // 
@@ -158,6 +160,7 @@
             this.tbMatKhauMoi1.Name = "tbMatKhauMoi1";
             this.tbMatKhauMoi1.Size = new System.Drawing.Size(207, 25);
             this.tbMatKhauMoi1.TabIndex = 3;
+            this.tbMatKhauMoi1.UseSystemPasswordChar = true;
             // 
             // dragControl1
             // 
@@ -184,7 +187,7 @@
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "DoiMatKhau";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "DoiMatKhau";

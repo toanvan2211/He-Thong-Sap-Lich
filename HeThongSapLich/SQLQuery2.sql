@@ -17,7 +17,7 @@ go
 create table taiKhoan
 (
 	taiKhoan varchar(100) primary key,
-	matKhau varchar(100) not null default '1',
+	matKhau varchar(32) not null default 'C4CA4238A0B923820DCC509A6F75849B',
 	loaiTaiKhoan varchar(10) not null default 'giangvien',
 	maGiangVien varchar(10) references giangvien(maGiangVien) on delete cascade
 )
@@ -259,6 +259,3 @@ create proc USP_DoiMatKhau
 as
 	update TaiKhoan set matKhau = @matKhau where taiKhoan = @taiKhoan
 go
-
-USP_NangQuyenTaiKhoan '2CNTT'
-select * from taiKHoan

@@ -131,7 +131,7 @@
             // 
             this.btnGuiMaXacNhan.BackColor = System.Drawing.Color.Orange;
             this.btnGuiMaXacNhan.FlatAppearance.BorderSize = 0;
-            this.btnGuiMaXacNhan.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lime;
+            this.btnGuiMaXacNhan.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkTurquoise;
             this.btnGuiMaXacNhan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuiMaXacNhan.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuiMaXacNhan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(41)))), ((int)(((byte)(44)))));
@@ -198,7 +198,7 @@
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "QuenMatKhau";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "QuenMatKhau";

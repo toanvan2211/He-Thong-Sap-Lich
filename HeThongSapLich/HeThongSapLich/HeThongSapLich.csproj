@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class\ExportToExcel.cs" />
+    <Compile Include="Class\MaHoa.cs" />
     <Compile Include="Class\SendEmail.cs" />
     <Compile Include="DAO\GacThiDAO.cs" />
     <Compile Include="DAO\HocKyDAO.cs" />

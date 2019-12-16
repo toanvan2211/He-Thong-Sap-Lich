@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HeThongSapLich.Class;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -22,6 +23,8 @@ namespace HeThongSapLich.DAO
         public bool KiemTra(string TaiKhoan, string MatKhau)
         {
             string Lenh = "USP_Login @userName , @passWord";
+
+            MatKhau = MaHoa.Instance.GetHash(MatKhau);
 
             DataTable KetQua = DataProvider.Instance.ExecuteQuery(Lenh, new object[]{TaiKhoan, MatKhau});
 
@@ -55,6 +58,8 @@ namespace HeThongSapLich.DAO
 
         public int DoiMatKhau(string taiKhoan, string matKhau)
         {
+            matKhau = MaHoa.Instance.GetHash(matKhau);
+
             string query = "USP_DoiMatKhau @taiKhoan , @matKhau";
             return DataProvider.Instance.ExecuteNonQuery(query, new object[] { taiKhoan, matKhau });
         }
