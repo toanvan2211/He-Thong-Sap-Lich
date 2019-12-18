@@ -54,7 +54,7 @@
     <Compile Include="Class\ExportToExcel.cs" />
     <Compile Include="Class\MaHoa.cs" />
     <Compile Include="Class\SendEmail.cs" />
-    <Compile Include="DAO\GacThiDAO.cs" />
+    <Compile Include="DAO\PhieuGacThiDAO.cs" />
     <Compile Include="DAO\HocKyDAO.cs" />
     <Compile Include="DAO\LopHocPhanDAO.cs" />
     <Compile Include="DAO\MonDAO.cs" />
@@ -64,7 +64,7 @@
     <Compile Include="Form\DoiMatKhau.Designer.cs">
       <DependentUpon>DoiMatKhau.cs</DependentUpon>
     </Compile>
-    <Compile Include="DTO\GacThi.cs" />
+    <Compile Include="DTO\PhieuGacThi.cs" />
     <Compile Include="DTO\HocKy.cs" />
     <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="DAO\GiangVienDAO.cs" />
@@ -136,6 +136,12 @@
     </Compile>
     <Compile Include="QuenMatKhau.Designer.cs">
       <DependentUpon>QuenMatKhau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_QuanLi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_QuanLi.Designer.cs">
+      <DependentUpon>UC_QuanLi.cs</DependentUpon>
     </Compile>
     <Compile Include="User Control\UC_Lich.cs">
       <SubType>UserControl</SubType>
@@ -223,6 +229,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QuenMatKhau.resx">
       <DependentUpon>QuenMatKhau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_QuanLi.resx">
+      <DependentUpon>UC_QuanLi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Control\UC_Lich.resx">
       <DependentUpon>UC_Lich.cs</DependentUpon>

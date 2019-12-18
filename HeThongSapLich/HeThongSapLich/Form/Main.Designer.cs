@@ -57,6 +57,7 @@
             this.timerTime = new System.Windows.Forms.Timer(this.components);
             this.pnlControls = new System.Windows.Forms.Panel();
             this.timerPExit = new System.Windows.Forms.Timer(this.components);
+            this.btnQuanLi = new System.Windows.Forms.Button();
             this.pnlLeft.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -73,6 +74,7 @@
             // pnlLeft
             // 
             this.pnlLeft.BackColor = System.Drawing.Color.DodgerBlue;
+            this.pnlLeft.Controls.Add(this.btnQuanLi);
             this.pnlLeft.Controls.Add(this.btnLichThi);
             this.pnlLeft.Controls.Add(this.btnTaoLich);
             this.pnlLeft.Controls.Add(this.pnlClicked);
@@ -90,7 +92,7 @@
             // 
             this.btnLichThi.FlatAppearance.BorderSize = 0;
             this.btnLichThi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLichThi.Font = new System.Drawing.Font("SFU ClearGothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLichThi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLichThi.ForeColor = System.Drawing.Color.White;
             this.btnLichThi.Image = ((System.Drawing.Image)(resources.GetObject("btnLichThi.Image")));
             this.btnLichThi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -107,7 +109,7 @@
             // 
             this.btnTaoLich.FlatAppearance.BorderSize = 0;
             this.btnTaoLich.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTaoLich.Font = new System.Drawing.Font("SFU ClearGothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTaoLich.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTaoLich.ForeColor = System.Drawing.Color.White;
             this.btnTaoLich.Image = ((System.Drawing.Image)(resources.GetObject("btnTaoLich.Image")));
             this.btnTaoLich.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -164,7 +166,7 @@
             // 
             this.btnSapLich.FlatAppearance.BorderSize = 0;
             this.btnSapLich.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSapLich.Font = new System.Drawing.Font("SFU ClearGothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSapLich.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSapLich.ForeColor = System.Drawing.Color.White;
             this.btnSapLich.Image = ((System.Drawing.Image)(resources.GetObject("btnSapLich.Image")));
             this.btnSapLich.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -181,7 +183,7 @@
             // 
             this.btnGiangVien.FlatAppearance.BorderSize = 0;
             this.btnGiangVien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGiangVien.Font = new System.Drawing.Font("SFU ClearGothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGiangVien.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGiangVien.ForeColor = System.Drawing.Color.White;
             this.btnGiangVien.Image = ((System.Drawing.Image)(resources.GetObject("btnGiangVien.Image")));
             this.btnGiangVien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -198,7 +200,7 @@
             // 
             this.btnThongTin.FlatAppearance.BorderSize = 0;
             this.btnThongTin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThongTin.Font = new System.Drawing.Font("SFU ClearGothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThongTin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThongTin.ForeColor = System.Drawing.Color.White;
             this.btnThongTin.Image = ((System.Drawing.Image)(resources.GetObject("btnThongTin.Image")));
             this.btnThongTin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -416,6 +418,23 @@
             this.timerPExit.Interval = 1;
             this.timerPExit.Tick += new System.EventHandler(this.timerPExit_Tick);
             // 
+            // btnQuanLi
+            // 
+            this.btnQuanLi.FlatAppearance.BorderSize = 0;
+            this.btnQuanLi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQuanLi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuanLi.ForeColor = System.Drawing.Color.White;
+            this.btnQuanLi.Image = ((System.Drawing.Image)(resources.GetObject("btnQuanLi.Image")));
+            this.btnQuanLi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnQuanLi.Location = new System.Drawing.Point(14, 406);
+            this.btnQuanLi.Name = "btnQuanLi";
+            this.btnQuanLi.Size = new System.Drawing.Size(186, 54);
+            this.btnQuanLi.TabIndex = 15;
+            this.btnQuanLi.Text = "   Quản lí";
+            this.btnQuanLi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnQuanLi.UseVisualStyleBackColor = true;
+            this.btnQuanLi.Click += new System.EventHandler(this.btnQuanLi_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -477,6 +496,7 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Button btnQuanLi;
     }
 }
 

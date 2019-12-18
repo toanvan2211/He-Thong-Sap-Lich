@@ -38,7 +38,7 @@ namespace HeThongSapLich
 
         void LoadDSGacThi()
         {
-            dgvSoBuoiGac.DataSource = GacThiDAO.Instance.LayDSGacThi(MaHocKy);
+            dgvSoBuoiGac.DataSource = PhieuGacThiDAO.Instance.LayDSGacThi(MaHocKy);
         }
 
         private void cbHocKy_SelectedIndexChanged(object sender, EventArgs e)

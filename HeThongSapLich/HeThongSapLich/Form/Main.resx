@@ -118,6 +118,18 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnQuanLi.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAYAAAAe2bNZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAFWSURBVFhH7ZQ9SkNBFIWDWBvsVcRKF+AOtFBQXJUJrkCRkN4iNqktFXQNISvQQlREwec5c08a
+        mXvloe+JZD44DMx89+elSKdQaIOqqraQc+QiE95vSm0eDLtDIm6lNg+GTW2my1Rq83CYzXQpy3jM7zIT
+        m+kykdo8GHZiM136UtsBA5eVZ07Xme6ktA+GP3ETnrr6O7iE7dLwMhiwizykUT/nHtlR6/qg+DK1+T1G
+        al0fFI+tR+IR4a/0NS/Ih87cO+tmjNW6Piy2HoltXdeCdVae+OfLoKiLbCBX7CCOkBVkUVoIPfmsm8F+
+        7NuVFgPxEHlHPK6RBelZ+I7cUHZ4Qw6k+0AaJD1mVXoWvK+ZFjKQ7gNpaG7IuvQsfDctZCjdh5K5IWUZ
+        j/lcpm+uyyuyJD0L3vk/RS+iJ90HEhv1kLNMTpE9qSHw9uXn+hwj4QcVCt/T6XwCIDx7uM1MPP0AAAAA
+        SUVORK5CYII=
+</value>
+  </data>
   <data name="btnLichThi.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAABGdBTUEAALGPC/xhBQAAAPFJREFUWEft

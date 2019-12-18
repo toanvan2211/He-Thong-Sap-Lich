@@ -40,7 +40,7 @@ namespace HeThongSapLich.DAO
 
         public int ChinhSua(GiangVien gv)
         {
-            string query = "update giangvien set ten = N'" + gv.Ten + "', khoa = N'" + gv.Khoa + "', gioiTinh = N'" + gv.GioiTinh + "', gmail = '" + gv.Gmail + "' where maGiangVien = '" + gv.MaGV + "'";
+            string query = "update giangvien set ten = N'" + gv.Ten + "', khoa = N'" + gv.Khoa + "', gioiTinh = N'" + gv.GioiTinh + "', mail = '" + gv.Gmail + "' where maGiangVien = '" + gv.MaGV + "'";
             return DataProvider.Instance.ExecuteNonQuery(query);
         }
 
@@ -63,7 +63,7 @@ namespace HeThongSapLich.DAO
 
         public DataTable LayGmail(string gmail)
         {
-            string query = "select * from giangVien where gmail = '" + gmail + "'";
+            string query = "select * from giangVien where mail = '" + gmail + "'";
             return DataProvider.Instance.ExecuteQuery(query);
         }
     }

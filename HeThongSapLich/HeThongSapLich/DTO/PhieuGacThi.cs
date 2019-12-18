@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 
 namespace HeThongSapLich.DTO
 {
-    public class GacThi
+    public class PhieuGacThi
     {
         public int MaGacThi { get; set; }
         public string MaGiangVien { get; set; }
         public byte SoBuoiGac { get; set; }
         public string MaHocKy { get; set; }
 
-        public GacThi() { }
+        public PhieuGacThi() { }
 
-        public GacThi(DataRow row)
+        public PhieuGacThi(DataRow row)
         {
             this.MaGacThi = (int)row["maGacThi"];
             this.MaGiangVien = (string)row["maGiangVien"];

@@ -7,40 +7,40 @@ using System.Threading.Tasks;
 
 namespace HeThongSapLich.DAO
 {
-    public class GacThiDAO
+    public class PhieuGacThiDAO
     {
-        private static GacThiDAO instance;
+        private static PhieuGacThiDAO instance;
 
-        public static GacThiDAO Instance
+        public static PhieuGacThiDAO Instance
         {
-            get { if (instance == null) instance = new GacThiDAO(); return instance; }
+            get { if (instance == null) instance = new PhieuGacThiDAO(); return instance; }
             private set { instance = value; }
         }
 
-        public GacThiDAO() { }
+        public PhieuGacThiDAO() { }
 
         public DataTable LayDSGacThi(string maHocKy)
         {
-            string query = "select * from gacthi where maHocKy = '" + maHocKy + "'";
+            string query = "select * from phieuGacThi where maHocKy = '" + maHocKy + "'";
             return DataProvider.Instance.ExecuteQuery(query);
         }
 
         public DataTable LaySoBuoiGac(string maHocKy, byte soBuoiGac)
         {
-            string query = "select * from GacThi where maHocKy = '" + maHocKy + "' and sobuoigac < " + soBuoiGac.ToString();
+            string query = "select * from phieuGacThi where maHocKy = '" + maHocKy + "' and sobuoigac < " + soBuoiGac.ToString();
 
             return DataProvider.Instance.ExecuteQuery(query);
         }
 
         public int CapNhatSoBuoiGac(string MaGiangVien, byte soBuoiGac)
         {
-            string query = "update GacThi set soBuoiGac = " + soBuoiGac + "where maGiangVien = '" + MaGiangVien + "'";
+            string query = "update phieuGacThi set soBuoiGac = " + soBuoiGac + "where maGiangVien = '" + MaGiangVien + "'";
             return DataProvider.Instance.ExecuteNonQuery(query);
         }
 
         public DataRow LayThongTin(string maGiangVien, string maHocKy)
         {
-            string query = "select * from gacthi where maGiangVien = '" + maGiangVien + "' and maHocKy = '" + maHocKy + "'";
+            string query = "select * from phieuGacThi where maGiangVien = '" + maGiangVien + "' and maHocKy = '" + maHocKy + "'";
             DataTable dt = DataProvider.Instance.ExecuteQuery(query);
             if (dt.Rows.Count != 0)
             {
@@ -54,7 +54,7 @@ namespace HeThongSapLich.DAO
 
         public int LamMoi(string maHocKy)
         {
-            string query = "delete gacThi where maHocKy = '" + maHocKy + "'";
+            string query = "delete phieuGacThi where maHocKy = '" + maHocKy + "'";
             return DataProvider.Instance.ExecuteNonQuery(query);
         }
 

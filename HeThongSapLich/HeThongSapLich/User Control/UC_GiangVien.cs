@@ -28,6 +28,7 @@ namespace HeThongSapLich.User_Control
                 pnlQuyenAdmin.Visible = true;
                 pnlQuyenAdmin.Enabled = true;
                 btnCapNhatThongTin.Enabled = true;
+                btnCapNhatThongTin.Visible = true;
                 btnCapQuyen.Enabled = true;
             }
 

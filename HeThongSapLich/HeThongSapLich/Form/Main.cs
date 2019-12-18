@@ -46,11 +46,13 @@ namespace HeThongSapLich
             UC_SapLich sapLich = new UC_SapLich();
             UC_TaoLich taoLich = new UC_TaoLich();
             UC_Lich lich = new UC_Lich();
+            UC_QuanLi quanLi = new UC_QuanLi();
             ThemUC(thongTin);
             ThemUC(giangVien);
             ThemUC(sapLich);
             ThemUC(taoLich);
             ThemUC(lich);
+            ThemUC(quanLi);
 
             pnlControls.Controls["UC_ThongTin"].BringToFront();
         }
@@ -94,6 +96,12 @@ namespace HeThongSapLich
         {
             pnlControls.Controls["UC_Lich"].BringToFront();
             LuotPanel(btnLichThi);
+        }
+
+        private void btnQuanLi_Click(object sender, EventArgs e)
+        {
+            pnlControls.Controls["UC_QuanLi"].BringToFront();
+            LuotPanel(btnQuanLi);
         }
 
         private void TimerTime_Tick(object sender, EventArgs e) //Đồng hồ nè

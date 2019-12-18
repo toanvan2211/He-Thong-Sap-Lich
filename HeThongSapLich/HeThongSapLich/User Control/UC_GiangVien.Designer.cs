@@ -315,6 +315,7 @@
             this.btnCapNhatThongTin.TabIndex = 6;
             this.btnCapNhatThongTin.Text = "Cập nhật thông tin";
             this.btnCapNhatThongTin.UseVisualStyleBackColor = false;
+            this.btnCapNhatThongTin.Visible = false;
             this.btnCapNhatThongTin.Click += new System.EventHandler(this.btnCapNhatThongTin_Click);
             // 
             // label9

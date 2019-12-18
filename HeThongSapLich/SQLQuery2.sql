@@ -10,7 +10,7 @@ create table giangVien
 	ten nvarchar(100) not null,
 	khoa nvarchar(100) not null default N'Công nghệ thông tin',
 	gioiTinh nvarchar(10) not null default 'Nam',
-	gmail varchar(100)
+	mail varchar(100)
 )
 go
 
@@ -32,7 +32,7 @@ create table hocKy
 )
 go
 
-create table GacThi
+create table phieuGacThi
 (
 	maGacThi int identity(001, 1) primary key,
 	maGiangVien varchar(10) references giangVien(maGiangVien) on delete cascade,
@@ -41,21 +41,21 @@ create table GacThi
 )
 go
 
-create table Mon
+create table mon
 (
 	maMon varchar(10) primary key,
 	ten nvarchar(100) not null
 )
 go
 
-create table Lop
+create table lop
 (
 	maLop varchar(10) primary key,
 	tenLop nvarchar(100) not null default N'Chưa đặt tên',
 )
 go
 
-create table LopHocPhan
+create table lopHocPhan
 (
 	maLHP varchar(20) primary key,
 	maLop varchar(10) references Lop(maLop) on delete cascade,
@@ -64,7 +64,7 @@ create table LopHocPhan
 )
 go
 
-create table Phong
+create table phong
 (
 	maPhong varchar(10) primary key,
 	tenPhong nvarchar(100) not null default N'Chưa đặt tên',
@@ -72,7 +72,7 @@ create table Phong
 )
 go
 
-create table LichThi
+create table lichThi
 (
 	maLichThi varchar(10) primary key,
 	maPhong varchar(10) references Phong(maPhong),
@@ -192,7 +192,7 @@ go
 create proc USP_TaoPhieuGacThi
 @maGV varchar(10), @maHocKy varchar(10)
 as 
-	insert into GacThi (maGiangVien, maHocKy)
+	insert into phieuGacThi (maGiangVien, maHocKy)
 	values (@maGV, @maHocKy)
 go
 

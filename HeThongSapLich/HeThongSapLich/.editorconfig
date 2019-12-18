@@ -4,4 +4,7 @@
 dotnet_diagnostic.CS0652.severity = silent
 
 # IDE0040: Add accessibility modifiers
-dotnet_style_require_accessibility_modifiers = always:silent
+dotnet_style_require_accessibility_modifiers = never:silent
+
+# IDE0052: Remove unread private members
+dotnet_diagnostic.IDE0052.severity = silent
