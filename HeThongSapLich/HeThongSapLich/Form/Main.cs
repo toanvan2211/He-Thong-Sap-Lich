@@ -24,7 +24,19 @@ namespace HeThongSapLich
         {
             uc.Dock = DockStyle.Fill;
             pnlControls.Controls.Add(uc);
-            uc.BringToFront();
+            uc.BringToFront();            
+        }
+
+        void CapQuyen()
+        {
+            if (Login.LoaiTaiKhoan == "admin")
+            {
+                btnSapLich.Text = "   Sắp lịch";
+                btnTaoLich.Visible = true;
+                btnTaoLich.Enabled = true;
+                btnQuanLi.Visible = true;
+                btnQuanLi.Enabled = true;
+            }
         }
 
         void LuotPanel(Control a)
@@ -41,20 +53,10 @@ namespace HeThongSapLich
             closed = true;
             timerTime.Start();
 
-            UC_ThongTin thongTin = new UC_ThongTin();
-            UC_GiangVien giangVien = new UC_GiangVien();
-            UC_SapLich sapLich = new UC_SapLich();
-            UC_TaoLich taoLich = new UC_TaoLich();
-            UC_Lich lich = new UC_Lich();
-            UC_QuanLi quanLi = new UC_QuanLi();
-            ThemUC(thongTin);
-            ThemUC(giangVien);
-            ThemUC(sapLich);
-            ThemUC(taoLich);
-            ThemUC(lich);
-            ThemUC(quanLi);
-
-            pnlControls.Controls["UC_ThongTin"].BringToFront();
+            UC_ThongTin tt = new UC_ThongTin();
+            ThemUC(tt);
+            LuotPanel(btnThongTin);
+            CapQuyen();
         }
         #endregion
 
@@ -70,37 +72,43 @@ namespace HeThongSapLich
         }
         private void btnTaoLich_Click(object sender, EventArgs e)
         {
-            pnlControls.Controls["UC_TaoLich"].BringToFront();
+            UC_TaoLich tl = new UC_TaoLich();
+            ThemUC(tl);
             LuotPanel(btnTaoLich);
         }
 
         private void BbtnThongTin_Click(object sender, EventArgs e)
         {
-            pnlControls.Controls["UC_ThongTin"].BringToFront();
+            UC_ThongTin tt = new UC_ThongTin();
+            ThemUC(tt);
             LuotPanel(btnThongTin);
         }
 
         private void btnGiangVien_Click(object sender, EventArgs e)
         {
-            pnlControls.Controls["UC_GiangVien"].BringToFront();
+            UC_GiangVien gv = new UC_GiangVien();
+            ThemUC(gv);
             LuotPanel(btnGiangVien);
         }
 
         private void btnSapLich_Click(object sender, EventArgs e)
         {
-            pnlControls.Controls["UC_SapLich"].BringToFront();
+            UC_SapLich sl = new UC_SapLich();
+            ThemUC(sl);
             LuotPanel(btnSapLich);
         }
 
         private void btnLichThi_Click(object sender, EventArgs e)
         {
-            pnlControls.Controls["UC_Lich"].BringToFront();
+            UC_Lich l = new UC_Lich();
+            ThemUC(l);
             LuotPanel(btnLichThi);
         }
 
         private void btnQuanLi_Click(object sender, EventArgs e)
         {
-            pnlControls.Controls["UC_QuanLi"].BringToFront();
+            UC_QuanLi ql = new UC_QuanLi();
+            ThemUC(ql);
             LuotPanel(btnQuanLi);
         }
 

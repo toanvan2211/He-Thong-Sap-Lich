@@ -14,15 +14,17 @@ namespace HeThongSapLich
 {
     public partial class XoaHocKy : Form
     {
-        public XoaHocKy()
+        string maHocKy;
+        public XoaHocKy(string maHocKy)
         {
             InitializeComponent();
+            this.maHocKy = maHocKy;
             LoadLichThi();
         }
 
         void LoadLichThi()
         {
-            dgvLichThi.DataSource = LichThiDAO.Instance.LayDSLichThiChuaFormat(UC_TaoLich.maHocKy);
+            dgvLichThi.DataSource = LichThiDAO.Instance.LayDSLichThiChuaFormat(maHocKy);
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
@@ -39,7 +41,7 @@ namespace HeThongSapLich
         {
             try
             {
-                if (HocKyDAO.Instance.XoaHocKy(UC_TaoLich.maHocKy) != 0)
+                if (HocKyDAO.Instance.XoaHocKy(maHocKy) != 0)
                 {
                     this.Close();
                 }

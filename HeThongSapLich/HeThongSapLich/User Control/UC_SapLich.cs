@@ -14,6 +14,13 @@ namespace HeThongSapLich.User_Control
 {
     public partial class UC_SapLich : UserControl
     {
+        private static UC_SapLich instance;
+
+        public static UC_SapLich Instance
+        {
+            get { if (instance == null) instance = new UC_SapLich(); return instance; }
+        }
+
         public string maHocKy;
         List<HocKy> listHocKy = new List<HocKy>();
         public UC_SapLich()
@@ -25,12 +32,6 @@ namespace HeThongSapLich.User_Control
             LoadDSHocKy();
             LoadComboBox();
             cbKieuSap.SelectedIndex = 0;
-
-            if (Login.LoaiTaiKhoan == "admin")
-            {
-                pnlAdmin.Visible = true;
-                pnlAdmin.Enabled = true;
-            }
         }
 
         #region Phương Thức
@@ -40,6 +41,9 @@ namespace HeThongSapLich.User_Control
             if (Login.LoaiTaiKhoan == "admin")
             {
                 btnSepGiangVienGac.Enabled = true;
+                pnlAdmin.Visible = true;
+                pnlAdmin.Enabled = true;
+                btnResetLich.Visible = true;
             }
         }
 
@@ -202,7 +206,14 @@ namespace HeThongSapLich.User_Control
             {
                 if (!string.IsNullOrEmpty(listGacThi[i].MaGiangVien))
                 {
-                    PhieuGacThiDAO.Instance.CapNhatSoBuoiGac(listGacThi[i].MaGiangVien, listGacThi[i].SoBuoiGac);
+                    if (listGacThi[i].SoBuoiGac == 0)
+                    {
+                        PhieuGacThiDAO.Instance.XoaPhieuGac(listGacThi[i].MaGacThi);
+                    }
+                    else
+                    {
+                        PhieuGacThiDAO.Instance.CapNhatSoBuoiGac(listGacThi[i].MaGacThi, listGacThi[i].SoBuoiGac);
+                    }
                 }
             }
         }
@@ -349,7 +360,14 @@ namespace HeThongSapLich.User_Control
             {
                 if (!string.IsNullOrEmpty(listGacThi[i].MaGiangVien))
                 {
-                    PhieuGacThiDAO.Instance.CapNhatSoBuoiGac(listGacThi[i].MaGiangVien, listGacThi[i].SoBuoiGac);
+                    if (listGacThi[i].SoBuoiGac == 0)
+                    {
+                        PhieuGacThiDAO.Instance.XoaPhieuGac(listGacThi[i].MaGacThi);
+                    }
+                    else
+                    {
+                        PhieuGacThiDAO.Instance.CapNhatSoBuoiGac(listGacThi[i].MaGacThi, listGacThi[i].SoBuoiGac);
+                    }
                 }
             }
         }
@@ -381,6 +399,13 @@ namespace HeThongSapLich.User_Control
 
         void XepTheoMaGV()
         {
+            DataTable test = LichThiDAO.Instance.LayLichThiKhongCoGiangVienGac(maHocKy);
+
+            if (test.Rows.Count == 0)
+            {
+                return;
+            }
+
             byte soBuoiGac = Convert.ToByte(nupSoBuoiGac.Value);
             string maGV = cbMaGV.Text;
             DataRow row = PhieuGacThiDAO.Instance.LayThongTin(maGV, maHocKy);
@@ -395,7 +420,7 @@ namespace HeThongSapLich.User_Control
             if (gt.SoBuoiGac < soBuoiGac)
             {
                 Random rd = new Random();
-                DataTable dt = LichThiDAO.Instance.LayLichThiKhongCoGiangVienGac();
+                DataTable dt = LichThiDAO.Instance.LayLichThiKhongCoGiangVienGac(maHocKy);
                 List<LichThi> listLichThi = new List<LichThi>();
                 foreach (DataRow item in dt.Rows)
                 {
@@ -406,7 +431,7 @@ namespace HeThongSapLich.User_Control
                 for (int i = 0; i < listLichThi.Count; i++)
                 {
                     listLichThi.Clear();
-                    dt = LichThiDAO.Instance.LayLichThiKhongCoGiangVienGac();
+                    dt = LichThiDAO.Instance.LayLichThiKhongCoGiangVienGac(maHocKy);
                     //listLichThi = new List<LichThi>();
                     foreach (DataRow item in dt.Rows)
                     {
@@ -431,7 +456,7 @@ namespace HeThongSapLich.User_Control
                         if (tempLichThi.Count == 0)
                         {
                             LichThiDAO.Instance.CapNhatGiangVienGacThi(gt.MaGiangVien, listLichThi[x].MaLichThi);
-                            PhieuGacThiDAO.Instance.CapNhatSoBuoiGac(gt.MaGiangVien, ++gt.SoBuoiGac);
+                            PhieuGacThiDAO.Instance.CapNhatSoBuoiGac(gt.MaGacThi, ++gt.SoBuoiGac);
                         }
                         else
                         {
@@ -442,7 +467,7 @@ namespace HeThongSapLich.User_Control
                                     if (j == tempLichThi.Count - 1)
                                     {
                                         LichThiDAO.Instance.CapNhatGiangVienGacThi(gt.MaGiangVien, listLichThi[x].MaLichThi);
-                                        PhieuGacThiDAO.Instance.CapNhatSoBuoiGac(gt.MaGiangVien, ++gt.SoBuoiGac);
+                                        PhieuGacThiDAO.Instance.CapNhatSoBuoiGac(gt.MaGacThi, ++gt.SoBuoiGac);
                                     }
                                 }
                                 else
@@ -502,7 +527,7 @@ namespace HeThongSapLich.User_Control
                                 PhieuGacThi gt = new PhieuGacThi(row);
 
                                 LichThiDAO.Instance.CapNhatGiangVienGacThi(Main.maGV, lt.MaLichThi);
-                                PhieuGacThiDAO.Instance.CapNhatSoBuoiGac(Main.maGV, ++gt.SoBuoiGac);
+                                PhieuGacThiDAO.Instance.CapNhatSoBuoiGac(gt.MaGacThi, ++gt.SoBuoiGac);
                                 MessageBox.Show("Đăng kí thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                         }
@@ -526,7 +551,7 @@ namespace HeThongSapLich.User_Control
                     PhieuGacThi gt = new PhieuGacThi(row);
 
                     LichThiDAO.Instance.CapNhatGiangVienGacThi(Main.maGV, lt.MaLichThi);
-                    PhieuGacThiDAO.Instance.CapNhatSoBuoiGac(Main.maGV, ++gt.SoBuoiGac);
+                    PhieuGacThiDAO.Instance.CapNhatSoBuoiGac(gt.MaGacThi, ++gt.SoBuoiGac);
                     MessageBox.Show("Đăng kí thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
@@ -570,6 +595,12 @@ namespace HeThongSapLich.User_Control
         }
 
         #endregion
+
+        public void KhoiTao()
+        {
+            LoadDSHocKy();
+            LoadLichThi();
+        }
 
         void LoadDSHocKy()
         {
@@ -635,8 +666,27 @@ namespace HeThongSapLich.User_Control
             LichThi lt = new LichThi(LichThiDAO.Instance.LayLichThiTheoMaChuaFormat(cbMaLichThi.Text).Rows[0]);
             if (Main.maGV == lt.MaGV)
             {
-                lt.MaGV = null;
-                LichThiDAO.Instance.HuyDangKyGac(lt.MaLichThi);
+                try
+                {
+                    lt.MaGV = null;
+                    LichThiDAO.Instance.HuyDangKyGac(lt.MaLichThi);
+                    DataTable dt = PhieuGacThiDAO.Instance.LayPhieuGacTheoMaGV(Main.maGV, maHocKy);
+                    byte count = Convert.ToByte(dt.Rows[0]["soBuoiGac"]);
+                    int maPhieuGac = Convert.ToInt32(dt.Rows[0]["maGacThi"]);
+                    count--;
+                    if (count > 0)
+                    {
+                        PhieuGacThiDAO.Instance.CapNhatSoBuoiGac(maPhieuGac, count);
+                    }
+                    else
+                    {
+                        PhieuGacThiDAO.Instance.XoaPhieuGac(maPhieuGac);
+                    }
+                }
+                catch (Exception a)
+                {
+                    MessageBox.Show("Đã có lỗi xảy ra, vui lòng thử lại sau.\nLỗi: " + a.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {
@@ -675,7 +725,7 @@ namespace HeThongSapLich.User_Control
 
         private void btnResetLich_Click(object sender, EventArgs e)
         {
-            LichThiDAO.Instance.ResetLichThi();
+            LichThiDAO.Instance.ResetLichThi(maHocKy);
             PhieuGacThiDAO.Instance.LamMoi(maHocKy);
             
             LoadLichThi();

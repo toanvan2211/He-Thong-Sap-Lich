@@ -45,6 +45,7 @@
             this.btnReset = new System.Windows.Forms.Button();
             this.btnTao = new System.Windows.Forms.Button();
             this.dragControl1 = new QuanLiDienThoai.DragControl();
+            this.dragControl2 = new QuanLiDienThoai.DragControl();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nupSiSo)).BeginInit();
             this.SuspendLayout();
@@ -220,6 +221,10 @@
             // 
             this.dragControl1.SelectControl = this.panel1;
             // 
+            // dragControl2
+            // 
+            this.dragControl2.SelectControl = this.label1;
+            // 
             // ThemLHP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -270,5 +275,6 @@
         private System.Windows.Forms.TextBox tbTenMon;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Button btnTao;
+        private QuanLiDienThoai.DragControl dragControl2;
     }
 }

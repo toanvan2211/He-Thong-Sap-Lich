@@ -14,6 +14,13 @@ namespace HeThongSapLich.User_Control
 {
     public partial class UC_TaoLich : UserControl
     {
+        private static UC_TaoLich instance;
+
+        public static UC_TaoLich Instance
+        {
+            get { if (instance == null) instance = new UC_TaoLich(); return instance; }
+        }
+
         string maKyThi, maLich;
         public static string maLHP, maMon, maHocKy;
         List<Mon> listMon = new List<Mon>();
@@ -26,6 +33,13 @@ namespace HeThongSapLich.User_Control
         }
 
         #region PhuongThuc
+
+        public void KhoiTao()
+        {
+            LoadKyThi();
+            LoadComboBox();
+            LoadDSLichThi();
+        }
 
         void LoadComboBox()
         {
@@ -178,7 +192,7 @@ namespace HeThongSapLich.User_Control
         {
             maMon = listMon[cbMon.SelectedIndex].MaMon;
 
-            using (XoaMon xm = new XoaMon())
+            using (XoaMon xm = new XoaMon(maMon))
             {
                 xm.ShowDialog();
             }
@@ -200,7 +214,7 @@ namespace HeThongSapLich.User_Control
         {
             LayMaHocKy();
 
-            using (XoaHocKy xhk = new XoaHocKy())
+            using (XoaHocKy xhk = new XoaHocKy(maHocKy))
             {
                 xhk.ShowDialog();
             }
@@ -222,7 +236,7 @@ namespace HeThongSapLich.User_Control
         private void btnXoaLHP_Click(object sender, EventArgs e)
         {
             maLHP = cbLHP.Text;
-            using (XoaLHP xlhp = new XoaLHP())
+            using (XoaLHP xlhp = new XoaLHP(maLHP))
             {
                 xlhp.ShowDialog();
             }

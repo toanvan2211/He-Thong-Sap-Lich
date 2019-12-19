@@ -46,6 +46,16 @@ namespace HeThongSapLich.DAO
             return DataProvider.Instance.ExecuteNonQuery(query, new object[] { maMon, tenMon });
         }
 
+        public int ChinhSuaMon(string maMon, string tenMon)
+        {
+            string query = "update mon set ten = default where maMon = '" + maMon + "'"; ;
+            if (!string.IsNullOrEmpty(tenMon))
+            {
+                query = "update mon set ten = N'" + tenMon + "' where maMon = '" + maMon + "'";
+            }
+            return DataProvider.Instance.ExecuteNonQuery(query);
+        }
+
         public int XoaMon(string maMon)
         {
             string query = "delete Mon where maMon = '" + maMon + "'";

@@ -39,6 +39,7 @@ namespace HeThongSapLich
                 {
                     SendEmail.Instance.GuiMail(tieuDe, body, nguoiNhan);
                     guiThanhCong = true;
+                    
                 }
                 catch (Exception a)
                 {
@@ -46,7 +47,7 @@ namespace HeThongSapLich
                 }
             });
             th.Start();
-
+            Thread.Sleep(8000);
             if (guiThanhCong)
             {
                 timer1.Start();
@@ -87,7 +88,7 @@ namespace HeThongSapLich
                 DataTable dt = GiangVienDAO.Instance.LayGmail(tbGmail.Text);
                 if (dt.Rows.Count != 0)
                 {
-                    gmail = dt.Rows[0]["gmail"].ToString();
+                    gmail = dt.Rows[0]["mail"].ToString();
                     string tenGiangVien = dt.Rows[0]["ten"].ToString();
 
                     maXacNhan = TaoMaXacNhan();

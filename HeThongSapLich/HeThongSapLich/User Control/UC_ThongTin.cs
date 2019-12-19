@@ -14,6 +14,13 @@ namespace HeThongSapLich.User_Control
 {
     public partial class UC_ThongTin : UserControl
     {
+        private static UC_ThongTin instance;
+
+        public static UC_ThongTin Instance
+        {
+            get { if (instance == null) instance = new UC_ThongTin(); return instance; }
+        }
+
         public UC_ThongTin()
         {
             InitializeComponent();
@@ -44,7 +51,7 @@ namespace HeThongSapLich.User_Control
             }
         }
 
-        void LoadThongTin()
+        public void LoadThongTin()
         {
             string TaiKhoan = Login.user; //Thông tin tài khoản đã đăng nhập
 

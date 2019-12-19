@@ -101,10 +101,16 @@ namespace HeThongSapLich.DAO
             return DataProvider.Instance.ExecuteQuery(query);
         }
 
-        public DataTable LayLichThiKhongCoGiangVienGac()
+        public DataTable LayLichThiKhongCoGiangVienGac(string maHocKy)
         {
-            string Lenh = "select * from LichThi where magiangvien is null";
+            string Lenh = "select * from LichThi where magiangvien is null and maHocKy = '" + maHocKy + "'";
             return DataProvider.Instance.ExecuteQuery(Lenh);
+        }
+
+        public DataTable LayLichThiTheoMaLop(string maLop)
+        {
+            string query = "select lt.* from lop l, lopHocPhan lhp, lichThi lt where l.maLop = lhp.maLop and lt.maLHP = lhp.maLHP and l.maLop = '" + maLop + "'";
+            return DataProvider.Instance.ExecuteQuery(query);
         }
 
         public bool KiemTraTonTaiGVGac(string maLichThi)
@@ -122,10 +128,10 @@ namespace HeThongSapLich.DAO
             }
         }
         
-        public void ResetLichThi()
+        public void ResetLichThi(string maHocKy)
         {
-            string Lenh = "update LichThi set maGiangVien = null where magiangvien is not null";
-            DataProvider.Instance.ExecuteNonQuery(Lenh);
+            string query = "update LichThi set maGiangVien = null where magiangvien is not null and maHocKy = '" + maHocKy + "'";
+            DataProvider.Instance.ExecuteNonQuery(query);
         }
 
         public void HuyDangKyGac(string maLichThi)

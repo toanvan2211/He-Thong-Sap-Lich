@@ -14,6 +14,13 @@ namespace HeThongSapLich.User_Control
 {
     public partial class UC_GiangVien : UserControl
     {
+        private static UC_GiangVien instance;
+
+        public static UC_GiangVien Instance
+        {
+            get { if (instance == null) instance = new UC_GiangVien(); return instance; }
+        }
+
         int saiMatKhau = 0, demNguoc = 0, thoiGianKhoa = 1800;
                 
         public UC_GiangVien()
@@ -25,17 +32,40 @@ namespace HeThongSapLich.User_Control
 
             if (Login.LoaiTaiKhoan == "admin")
             {
-                pnlQuyenAdmin.Visible = true;
-                pnlQuyenAdmin.Enabled = true;
+                btnThemGiangVien.Visible = true;
+                btnThemGiangVien.Enabled = true;
+                tbTen.Enabled = true;
+                cbGioiTinh.Enabled = true;
+                cbKhoa.Enabled = true;
+                tbMail.Enabled = true;
                 btnCapNhatThongTin.Enabled = true;
                 btnCapNhatThongTin.Visible = true;
-                btnCapQuyen.Enabled = true;
+                btnXoaGiangVien.Visible = true;
+                btnXoaGiangVien.Enabled = true;
             }
+
+            //if (Login.LoaiTaiKhoan == "admin")
+            //{
+            //    pnlQuyenAdmin.Visible = true;
+            //    pnlQuyenAdmin.Enabled = true;
+            //    btnCapNhatThongTin.Enabled = true;
+            //    btnCapNhatThongTin.Visible = true;
+            //    btnCapQuyen.Enabled = true;
+            //}
 
             LoadGiangVien();
         }
 
-        void LoadGiangVien()
+        void LamMoi()
+        {
+            tbMaGV.ResetText();
+            tbTen.ResetText();
+            cbKhoa.ResetText();
+            cbGioiTinh.ResetText();
+            tbMail.ResetText();
+        }
+
+        public void LoadGiangVien()
         {
             dgvGiangVien.DataSource = GiangVienDAO.Instance.LayDSGiangVien();
         }
@@ -118,6 +148,23 @@ namespace HeThongSapLich.User_Control
             else
             {
                 MessageBox.Show("Vui lòng nhập đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void btnXoaGiangVien_Click(object sender, EventArgs e)
+        {
+            DialogResult rs = MessageBox.Show("Bạn có chắc muốn xóa giảng viên này?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (rs == DialogResult.Yes)
+            {
+                if (GiangVienDAO.Instance.XoaGiangVien(tbMaGV.Text) != 0)
+                {
+                    LoadGiangVien();
+                    LamMoi();
+                }
+                else
+                {
+                    MessageBox.Show("Đã có lỗi xảy ra, vui lòng thử lại sau.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 

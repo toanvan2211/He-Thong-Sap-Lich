@@ -56,3 +56,9 @@ E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeTh
 E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\HeThongSapLich\obj\Debug\HeThongSapLich.DoiMatKhau.resources
 E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\HeThongSapLich\obj\Debug\HeThongSapLich.QuenMatKhau.resources
 E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\HeThongSapLich\obj\Debug\HeThongSapLich.UC_QuanLi.resources
+E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\HeThongSapLich\obj\Debug\HeThongSapLich.ThemLop.resources
+E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\HeThongSapLich\obj\Debug\HeThongSapLich.XoaLop.resources
+E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\HeThongSapLich\obj\Debug\HeThongSapLich.ChinhSuaLHP.resources
+E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\HeThongSapLich\obj\Debug\HeThongSapLich.ChinhSuaLop.resources
+E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\HeThongSapLich\obj\Debug\HeThongSapLich.ChinhSuaMon.resources
+E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\HeThongSapLich\obj\Debug\HeThongSapLich.ChinhSuaHocKy.resources

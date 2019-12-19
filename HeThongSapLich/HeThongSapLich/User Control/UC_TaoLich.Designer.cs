@@ -412,6 +412,7 @@
             // 
             // cbKyThi
             // 
+            this.cbKyThi.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.cbKyThi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbKyThi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbKyThi.FormattingEnabled = true;

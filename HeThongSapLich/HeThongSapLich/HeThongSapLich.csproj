@@ -51,6 +51,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChinhSuaHocKy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChinhSuaHocKy.Designer.cs">
+      <DependentUpon>ChinhSuaHocKy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\ChinhSuaMon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\ChinhSuaMon.Designer.cs">
+      <DependentUpon>ChinhSuaMon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\ChinhSuaLHP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\ChinhSuaLHP.Designer.cs">
+      <DependentUpon>ChinhSuaLHP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\ChinhSuaLop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\ChinhSuaLop.Designer.cs">
+      <DependentUpon>ChinhSuaLop.cs</DependentUpon>
+    </Compile>
     <Compile Include="Class\ExportToExcel.cs" />
     <Compile Include="Class\MaHoa.cs" />
     <Compile Include="Class\SendEmail.cs" />
@@ -131,16 +155,22 @@
     <Compile Include="Form\ThemMon.Designer.cs">
       <DependentUpon>ThemMon.cs</DependentUpon>
     </Compile>
-    <Compile Include="QuenMatKhau.cs">
+    <Compile Include="Form\QuenMatKhau.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QuenMatKhau.Designer.cs">
+    <Compile Include="Form\QuenMatKhau.Designer.cs">
       <DependentUpon>QuenMatKhau.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC_QuanLi.cs">
+    <Compile Include="Form\ThemLop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\ThemLop.Designer.cs">
+      <DependentUpon>ThemLop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Control\UC_QuanLi.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UC_QuanLi.Designer.cs">
+    <Compile Include="User Control\UC_QuanLi.Designer.cs">
       <DependentUpon>UC_QuanLi.cs</DependentUpon>
     </Compile>
     <Compile Include="User Control\UC_Lich.cs">
@@ -191,6 +221,24 @@
     <Compile Include="Form\XoaMon.Designer.cs">
       <DependentUpon>XoaMon.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form\XoaLop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\XoaLop.Designer.cs">
+      <DependentUpon>XoaLop.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ChinhSuaHocKy.resx">
+      <DependentUpon>ChinhSuaHocKy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\ChinhSuaMon.resx">
+      <DependentUpon>ChinhSuaMon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\ChinhSuaLHP.resx">
+      <DependentUpon>ChinhSuaLHP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\ChinhSuaLop.resx">
+      <DependentUpon>ChinhSuaLop.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\DoiMatKhau.resx">
       <DependentUpon>DoiMatKhau.cs</DependentUpon>
     </EmbeddedResource>
@@ -227,10 +275,13 @@
     <EmbeddedResource Include="Form\ThemMon.resx">
       <DependentUpon>ThemMon.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QuenMatKhau.resx">
+    <EmbeddedResource Include="Form\QuenMatKhau.resx">
       <DependentUpon>QuenMatKhau.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC_QuanLi.resx">
+    <EmbeddedResource Include="Form\ThemLop.resx">
+      <DependentUpon>ThemLop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Control\UC_QuanLi.resx">
       <DependentUpon>UC_QuanLi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Control\UC_Lich.resx">
@@ -256,6 +307,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\XoaMon.resx">
       <DependentUpon>XoaMon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\XoaLop.resx">
+      <DependentUpon>XoaLop.cs</DependentUpon>
     </EmbeddedResource>
     <None Include=".editorconfig" />
     <None Include="Properties\Settings.settings">

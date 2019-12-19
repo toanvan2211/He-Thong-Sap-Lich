@@ -15,13 +15,20 @@ namespace HeThongSapLich.User_Control
 {
     public partial class UC_Lich : UserControl
     {
+        private static UC_Lich instance;
+
+        public static UC_Lich Instance
+        {
+            get { if (instance == null) instance = new UC_Lich(); return instance; }
+        }
+
         public UC_Lich()
         {
             InitializeComponent();
             LoadKyThi();
         }
 
-        void LoadKyThi()
+        public void LoadKyThi()
         {
             cbKyThi.DataSource = HocKyDAO.Instance.LayDSHocKy();
             cbKyThi.DisplayMember = "tenHocKy";

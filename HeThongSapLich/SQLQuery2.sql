@@ -26,7 +26,7 @@ go
 create table hocKy
 (
 	maHocKy varchar(10) primary key,
-	tenHocKy nvarchar(100) not null,
+	tenHocKy nvarchar(100) not null default N'Chưa đặt tên',
 	thoiGianBatDau date not null,
 	thoiGianKetThuc date not null
 )
@@ -44,7 +44,7 @@ go
 create table mon
 (
 	maMon varchar(10) primary key,
-	ten nvarchar(100) not null
+	ten nvarchar(100) not null default N'Chưa đặt tên'
 )
 go
 
@@ -76,7 +76,7 @@ create table lichThi
 (
 	maLichThi varchar(10) primary key,
 	maPhong varchar(10) references Phong(maPhong),
-	maGiangVien varchar(10) references GiangVien(maGiangVien) on delete cascade,
+	maGiangVien varchar(10) references GiangVien(maGiangVien) on delete set null,
 	maLHP varchar(20) references LopHocPhan(maLHP) on delete cascade,
 	ngayThi date not null,
 	caThi varchar(10) not null,
@@ -258,4 +258,31 @@ create proc USP_DoiMatKhau
 @taiKhoan varchar(10), @matKhau varchar(100)
 as
 	update TaiKhoan set matKhau = @matKhau where taiKhoan = @taiKhoan
+go
+
+create proc USP_TaoLop
+@maLop varchar(10), @tenLop nvarchar(100)	
+as
+	insert into lop
+	values (@maLop, @tenLop)
+go
+
+
+create proc USP_TaoLop1
+@maLop varchar(10)
+as
+	insert into lop
+	values (@maLop, default)
+go
+
+create proc USP_ChinhSuaHocKy
+@maHocKy varchar(10), @tenHocKy nvarchar(100), @bd date, @kt date
+as
+	update hocKy set tenHocKy = @tenHocKy, thoiGianBatDau = @bd, thoiGianKetThuc = @kt where maHocKy = @maHocKy
+go
+ 
+create proc USP_ChinhSuaHocKy1
+@maHocKy varchar(10), @bd date, @kt date
+as
+	update hocKy set tenHocKy = default, thoiGianBatDau = @bd, thoiGianKetThuc = @kt where maHocKy = @maHocKy
 go

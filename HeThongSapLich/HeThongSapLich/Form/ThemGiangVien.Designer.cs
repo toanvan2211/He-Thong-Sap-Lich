@@ -44,6 +44,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnThoat = new System.Windows.Forms.Button();
+            this.dragControl1 = new QuanLiDienThoai.DragControl();
+            this.dragControl2 = new QuanLiDienThoai.DragControl();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -225,6 +227,14 @@
             this.btnThoat.UseVisualStyleBackColor = false;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
+            // dragControl1
+            // 
+            this.dragControl1.SelectControl = this.panel1;
+            // 
+            // dragControl2
+            // 
+            this.dragControl2.SelectControl = this.label1;
+            // 
             // ThemGiangVien
             // 
             this.AcceptButton = this.btnThem;
@@ -275,5 +285,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnThoat;
+        private QuanLiDienThoai.DragControl dragControl1;
+        private QuanLiDienThoai.DragControl dragControl2;
     }
 }

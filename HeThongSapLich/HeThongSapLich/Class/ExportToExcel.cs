@@ -172,6 +172,16 @@ namespace HeThongSapLich.Class
             Excel.Range c4 = oSheet.get_Range(c1, c3);
 
             oSheet.get_Range(c3, c4).HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+
+            Excel.Range t1 = (Excel.Range)oSheet.Cells[rowStart, 5];
+            Excel.Range t2 = (Excel.Range)oSheet.Cells[rowEnd, 5];
+
+            oSheet.get_Range(t1, t2).HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+
+            Excel.Range t3 = (Excel.Range)oSheet.Cells[rowStart, 10];
+            Excel.Range t4 = (Excel.Range)oSheet.Cells[rowEnd, 10];
+
+            oSheet.get_Range(t3, t4).HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
         }
     }
 }

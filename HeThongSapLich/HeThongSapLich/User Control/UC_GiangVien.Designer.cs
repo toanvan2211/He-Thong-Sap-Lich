@@ -32,11 +32,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvGiangVien = new System.Windows.Forms.DataGridView();
-            this.maGiangVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Khoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnlQuyenAdmin = new System.Windows.Forms.Panel();
@@ -62,6 +57,12 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.timerKhoa = new System.Windows.Forms.Timer(this.components);
+            this.btnXoaGiangVien = new System.Windows.Forms.Button();
+            this.maGiangVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Khoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGiangVien)).BeginInit();
             this.panel2.SuspendLayout();
@@ -108,51 +109,6 @@
             this.dgvGiangVien.TabIndex = 0;
             this.dgvGiangVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGiangVien_CellClick);
             // 
-            // maGiangVien
-            // 
-            this.maGiangVien.DataPropertyName = "maGiangVien";
-            this.maGiangVien.FillWeight = 99.74749F;
-            this.maGiangVien.HeaderText = "Mã Giảng Viên";
-            this.maGiangVien.Name = "maGiangVien";
-            this.maGiangVien.ReadOnly = true;
-            this.maGiangVien.Width = 150;
-            // 
-            // ten
-            // 
-            this.ten.DataPropertyName = "ten";
-            this.ten.FillWeight = 65.48567F;
-            this.ten.HeaderText = "Tên";
-            this.ten.Name = "ten";
-            this.ten.ReadOnly = true;
-            this.ten.Width = 250;
-            // 
-            // Khoa
-            // 
-            this.Khoa.DataPropertyName = "khoa";
-            this.Khoa.FillWeight = 65.48567F;
-            this.Khoa.HeaderText = "Khoa";
-            this.Khoa.Name = "Khoa";
-            this.Khoa.ReadOnly = true;
-            this.Khoa.Width = 200;
-            // 
-            // gioiTinh
-            // 
-            this.gioiTinh.DataPropertyName = "GioiTinh";
-            this.gioiTinh.FillWeight = 100.7498F;
-            this.gioiTinh.HeaderText = "Giới tính";
-            this.gioiTinh.Name = "gioiTinh";
-            this.gioiTinh.ReadOnly = true;
-            this.gioiTinh.Width = 80;
-            // 
-            // gmail
-            // 
-            this.gmail.DataPropertyName = "gmail";
-            this.gmail.FillWeight = 65.48567F;
-            this.gmail.HeaderText = "Gmail";
-            this.gmail.Name = "gmail";
-            this.gmail.ReadOnly = true;
-            this.gmail.Width = 200;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -166,6 +122,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnXoaGiangVien);
             this.panel2.Controls.Add(this.pnlQuyenAdmin);
             this.panel2.Controls.Add(this.cbKhoa);
             this.panel2.Controls.Add(this.cbGioiTinh);
@@ -260,6 +217,7 @@
             // cbKhoa
             // 
             this.cbKhoa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbKhoa.Enabled = false;
             this.cbKhoa.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbKhoa.FormattingEnabled = true;
             this.cbKhoa.Items.AddRange(new object[] {
@@ -272,6 +230,7 @@
             // cbGioiTinh
             // 
             this.cbGioiTinh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbGioiTinh.Enabled = false;
             this.cbGioiTinh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbGioiTinh.FormattingEnabled = true;
             this.cbGioiTinh.Items.AddRange(new object[] {
@@ -295,6 +254,7 @@
             // 
             // tbMail
             // 
+            this.tbMail.Enabled = false;
             this.tbMail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbMail.Location = new System.Drawing.Point(118, 204);
             this.tbMail.Name = "tbMail";
@@ -307,11 +267,11 @@
             this.btnCapNhatThongTin.Enabled = false;
             this.btnCapNhatThongTin.FlatAppearance.BorderSize = 0;
             this.btnCapNhatThongTin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCapNhatThongTin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCapNhatThongTin.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCapNhatThongTin.ForeColor = System.Drawing.Color.Black;
-            this.btnCapNhatThongTin.Location = new System.Drawing.Point(257, 244);
+            this.btnCapNhatThongTin.Location = new System.Drawing.Point(130, 244);
             this.btnCapNhatThongTin.Name = "btnCapNhatThongTin";
-            this.btnCapNhatThongTin.Size = new System.Drawing.Size(184, 51);
+            this.btnCapNhatThongTin.Size = new System.Drawing.Size(145, 36);
             this.btnCapNhatThongTin.TabIndex = 6;
             this.btnCapNhatThongTin.Text = "Cập nhật thông tin";
             this.btnCapNhatThongTin.UseVisualStyleBackColor = false;
@@ -342,6 +302,7 @@
             // 
             // tbMaGV
             // 
+            this.tbMaGV.Enabled = false;
             this.tbMaGV.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbMaGV.Location = new System.Drawing.Point(118, 24);
             this.tbMaGV.Name = "tbMaGV";
@@ -362,6 +323,7 @@
             // 
             // tbTen
             // 
+            this.tbTen.Enabled = false;
             this.tbTen.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbTen.Location = new System.Drawing.Point(118, 70);
             this.tbTen.Name = "tbTen";
@@ -396,9 +358,9 @@
             this.btnThemGiangVien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(41)))), ((int)(((byte)(44)))));
             this.btnThemGiangVien.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnThemGiangVien.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnThemGiangVien.FlatAppearance.BorderSize = 0;
+            this.btnThemGiangVien.Enabled = false;
             this.btnThemGiangVien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThemGiangVien.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThemGiangVien.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThemGiangVien.ForeColor = System.Drawing.Color.White;
             this.btnThemGiangVien.Location = new System.Drawing.Point(202, 0);
             this.btnThemGiangVien.Name = "btnThemGiangVien";
@@ -407,6 +369,7 @@
             this.btnThemGiangVien.Text = "Thêm giảng viên";
             this.btnThemGiangVien.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThemGiangVien.UseVisualStyleBackColor = false;
+            this.btnThemGiangVien.Visible = false;
             this.btnThemGiangVien.Click += new System.EventHandler(this.btnThemGiangVien_Click_1);
             // 
             // btnChangeInfo
@@ -414,9 +377,8 @@
             this.btnChangeInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(41)))), ((int)(((byte)(44)))));
             this.btnChangeInfo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnChangeInfo.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnChangeInfo.FlatAppearance.BorderSize = 0;
             this.btnChangeInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChangeInfo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChangeInfo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChangeInfo.ForeColor = System.Drawing.Color.White;
             this.btnChangeInfo.Location = new System.Drawing.Point(0, 0);
             this.btnChangeInfo.Name = "btnChangeInfo";
@@ -447,6 +409,68 @@
             // 
             this.timerKhoa.Interval = 1000;
             this.timerKhoa.Tick += new System.EventHandler(this.timerKhoa_Tick);
+            // 
+            // btnXoaGiangVien
+            // 
+            this.btnXoaGiangVien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(184)))), ((int)(((byte)(3)))));
+            this.btnXoaGiangVien.Enabled = false;
+            this.btnXoaGiangVien.FlatAppearance.BorderSize = 0;
+            this.btnXoaGiangVien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXoaGiangVien.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoaGiangVien.ForeColor = System.Drawing.Color.Black;
+            this.btnXoaGiangVien.Location = new System.Drawing.Point(286, 244);
+            this.btnXoaGiangVien.Name = "btnXoaGiangVien";
+            this.btnXoaGiangVien.Size = new System.Drawing.Size(145, 36);
+            this.btnXoaGiangVien.TabIndex = 19;
+            this.btnXoaGiangVien.Text = "Xóa giảng viên";
+            this.btnXoaGiangVien.UseVisualStyleBackColor = false;
+            this.btnXoaGiangVien.Visible = false;
+            this.btnXoaGiangVien.Click += new System.EventHandler(this.btnXoaGiangVien_Click);
+            // 
+            // maGiangVien
+            // 
+            this.maGiangVien.DataPropertyName = "maGiangVien";
+            this.maGiangVien.FillWeight = 99.74749F;
+            this.maGiangVien.HeaderText = "Mã Giảng Viên";
+            this.maGiangVien.Name = "maGiangVien";
+            this.maGiangVien.ReadOnly = true;
+            this.maGiangVien.Width = 150;
+            // 
+            // ten
+            // 
+            this.ten.DataPropertyName = "ten";
+            this.ten.FillWeight = 65.48567F;
+            this.ten.HeaderText = "Tên";
+            this.ten.Name = "ten";
+            this.ten.ReadOnly = true;
+            this.ten.Width = 250;
+            // 
+            // Khoa
+            // 
+            this.Khoa.DataPropertyName = "khoa";
+            this.Khoa.FillWeight = 65.48567F;
+            this.Khoa.HeaderText = "Khoa";
+            this.Khoa.Name = "Khoa";
+            this.Khoa.ReadOnly = true;
+            this.Khoa.Width = 200;
+            // 
+            // gioiTinh
+            // 
+            this.gioiTinh.DataPropertyName = "GioiTinh";
+            this.gioiTinh.FillWeight = 100.7498F;
+            this.gioiTinh.HeaderText = "Giới tính";
+            this.gioiTinh.Name = "gioiTinh";
+            this.gioiTinh.ReadOnly = true;
+            this.gioiTinh.Width = 80;
+            // 
+            // gmail
+            // 
+            this.gmail.DataPropertyName = "mail";
+            this.gmail.FillWeight = 65.48567F;
+            this.gmail.HeaderText = "Mail";
+            this.gmail.Name = "gmail";
+            this.gmail.ReadOnly = true;
+            this.gmail.Width = 200;
             // 
             // UC_GiangVien
             // 
@@ -505,6 +529,7 @@
         private System.Windows.Forms.Timer timerKhoa;
         private System.Windows.Forms.Label lbThoiGianKhoa;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnXoaGiangVien;
         private System.Windows.Forms.DataGridViewTextBoxColumn maGiangVien;
         private System.Windows.Forms.DataGridViewTextBoxColumn ten;
         private System.Windows.Forms.DataGridViewTextBoxColumn Khoa;

@@ -87,11 +87,11 @@ namespace HeThongSapLich
                 {
                     if (LopHocPhanDAO.Instance.ThemLHP(tbMaLHP.Text, cbMaLop.Text, cbMaMon.Text, Convert.ToByte(nupSiSo.Value)) != 0)
                     {
-                        MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
-                        MessageBox.Show("Đã có lỗi xảy ra, vui lòng thử lại sau.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Đã có lỗi xảy ra, vui lòng thử lại sau.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 catch (System.Data.SqlClient.SqlException a)

@@ -36,15 +36,16 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.pnlAdmin = new System.Windows.Forms.Panel();
+            this.btnSepGiangVienGac = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.cbKieuSap = new System.Windows.Forms.ComboBox();
+            this.cbMaGV = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.nupSoBuoiGac = new System.Windows.Forms.NumericUpDown();
             this.ckbTatCa = new System.Windows.Forms.CheckBox();
-            this.cbMaGV = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.btnSepGiangVienGac = new System.Windows.Forms.Button();
             this.btnHuy = new System.Windows.Forms.Button();
             this.btnDangKy = new System.Windows.Forms.Button();
             this.cbNgay = new System.Windows.Forms.ComboBox();
@@ -62,13 +63,13 @@
             this.MaLHP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ngayThi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CaThi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pnlAdmin = new System.Windows.Forms.Panel();
+            this.maHocKy1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.pnlAdmin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nupSoBuoiGac)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLichThi)).BeginInit();
-            this.pnlAdmin.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -118,6 +119,7 @@
             this.btnResetLich.Text = "Reset lịch thi";
             this.btnResetLich.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnResetLich.UseVisualStyleBackColor = false;
+            this.btnResetLich.Visible = false;
             this.btnResetLich.Click += new System.EventHandler(this.btnResetLich_Click);
             // 
             // btnCapNhat
@@ -186,6 +188,42 @@
             this.panel3.Size = new System.Drawing.Size(342, 683);
             this.panel3.TabIndex = 2;
             // 
+            // pnlAdmin
+            // 
+            this.pnlAdmin.Controls.Add(this.btnSepGiangVienGac);
+            this.pnlAdmin.Controls.Add(this.label10);
+            this.pnlAdmin.Controls.Add(this.label3);
+            this.pnlAdmin.Controls.Add(this.cbKieuSap);
+            this.pnlAdmin.Controls.Add(this.cbMaGV);
+            this.pnlAdmin.Controls.Add(this.label9);
+            this.pnlAdmin.Controls.Add(this.label8);
+            this.pnlAdmin.Controls.Add(this.nupSoBuoiGac);
+            this.pnlAdmin.Controls.Add(this.ckbTatCa);
+            this.pnlAdmin.Enabled = false;
+            this.pnlAdmin.Location = new System.Drawing.Point(3, 308);
+            this.pnlAdmin.Name = "pnlAdmin";
+            this.pnlAdmin.Size = new System.Drawing.Size(336, 362);
+            this.pnlAdmin.TabIndex = 21;
+            this.pnlAdmin.Visible = false;
+            // 
+            // btnSepGiangVienGac
+            // 
+            this.btnSepGiangVienGac.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(41)))), ((int)(((byte)(44)))));
+            this.btnSepGiangVienGac.Enabled = false;
+            this.btnSepGiangVienGac.FlatAppearance.BorderSize = 0;
+            this.btnSepGiangVienGac.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSepGiangVienGac.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSepGiangVienGac.ForeColor = System.Drawing.Color.White;
+            this.btnSepGiangVienGac.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSepGiangVienGac.Location = new System.Drawing.Point(72, 267);
+            this.btnSepGiangVienGac.Name = "btnSepGiangVienGac";
+            this.btnSepGiangVienGac.Size = new System.Drawing.Size(247, 58);
+            this.btnSepGiangVienGac.TabIndex = 12;
+            this.btnSepGiangVienGac.Text = "Sắp lịch tự động";
+            this.btnSepGiangVienGac.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSepGiangVienGac.UseVisualStyleBackColor = false;
+            this.btnSepGiangVienGac.Click += new System.EventHandler(this.btnSepGiangVienGac_Click);
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -196,6 +234,18 @@
             this.label10.TabIndex = 20;
             this.label10.Text = "Chọn kiều sắp:";
             this.label10.Click += new System.EventHandler(this.label10_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(41)))), ((int)(((byte)(44)))));
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(13, 32);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(142, 30);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Tự động sắp:";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // cbKieuSap
             // 
@@ -215,6 +265,22 @@
             this.cbKieuSap.TabIndex = 19;
             this.cbKieuSap.SelectedIndexChanged += new System.EventHandler(this.cbKieuSap_SelectedIndexChanged);
             // 
+            // cbMaGV
+            // 
+            this.cbMaGV.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbMaGV.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbMaGV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbMaGV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbMaGV.Font = new System.Drawing.Font("SFU ClearGothic", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbMaGV.FormattingEnabled = true;
+            this.cbMaGV.Items.AddRange(new object[] {
+            "Tất cả giảng viên"});
+            this.cbMaGV.Location = new System.Drawing.Point(130, 79);
+            this.cbMaGV.Name = "cbMaGV";
+            this.cbMaGV.Size = new System.Drawing.Size(189, 26);
+            this.cbMaGV.TabIndex = 15;
+            this.cbMaGV.SelectedIndexChanged += new System.EventHandler(this.cbMaGV_SelectedIndexChanged);
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -225,6 +291,17 @@
             this.label9.TabIndex = 18;
             this.label9.Text = "Số buổi gác:";
             this.label9.Click += new System.EventHandler(this.label9_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(14, 80);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(108, 21);
+            this.label8.TabIndex = 14;
+            this.label8.Text = "Chọn mã GV:";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // nupSoBuoiGac
             // 
@@ -254,63 +331,6 @@
             this.ckbTatCa.Text = "Tất cả giảng viên";
             this.ckbTatCa.UseVisualStyleBackColor = true;
             this.ckbTatCa.CheckedChanged += new System.EventHandler(this.ckbTatCa_CheckedChanged);
-            // 
-            // cbMaGV
-            // 
-            this.cbMaGV.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cbMaGV.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cbMaGV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbMaGV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbMaGV.Font = new System.Drawing.Font("SFU ClearGothic", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbMaGV.FormattingEnabled = true;
-            this.cbMaGV.Items.AddRange(new object[] {
-            "Tất cả giảng viên"});
-            this.cbMaGV.Location = new System.Drawing.Point(130, 79);
-            this.cbMaGV.Name = "cbMaGV";
-            this.cbMaGV.Size = new System.Drawing.Size(189, 26);
-            this.cbMaGV.TabIndex = 15;
-            this.cbMaGV.SelectedIndexChanged += new System.EventHandler(this.cbMaGV_SelectedIndexChanged);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(14, 80);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(108, 21);
-            this.label8.TabIndex = 14;
-            this.label8.Text = "Chọn mã GV:";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(41)))), ((int)(((byte)(44)))));
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(13, 32);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(142, 30);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "Tự động sắp:";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // btnSepGiangVienGac
-            // 
-            this.btnSepGiangVienGac.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(41)))), ((int)(((byte)(44)))));
-            this.btnSepGiangVienGac.Enabled = false;
-            this.btnSepGiangVienGac.FlatAppearance.BorderSize = 0;
-            this.btnSepGiangVienGac.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSepGiangVienGac.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSepGiangVienGac.ForeColor = System.Drawing.Color.White;
-            this.btnSepGiangVienGac.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSepGiangVienGac.Location = new System.Drawing.Point(72, 267);
-            this.btnSepGiangVienGac.Name = "btnSepGiangVienGac";
-            this.btnSepGiangVienGac.Size = new System.Drawing.Size(247, 58);
-            this.btnSepGiangVienGac.TabIndex = 12;
-            this.btnSepGiangVienGac.Text = "Sắp lịch tự động";
-            this.btnSepGiangVienGac.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSepGiangVienGac.UseVisualStyleBackColor = false;
-            this.btnSepGiangVienGac.Click += new System.EventHandler(this.btnSepGiangVienGac_Click);
             // 
             // btnHuy
             // 
@@ -447,7 +467,8 @@
             this.MaGiangVien,
             this.MaLHP,
             this.ngayThi,
-            this.CaThi});
+            this.CaThi,
+            this.maHocKy1});
             this.dgvLichThi.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvLichThi.Location = new System.Drawing.Point(0, 0);
             this.dgvLichThi.Name = "dgvLichThi";
@@ -498,23 +519,13 @@
             this.CaThi.Name = "CaThi";
             this.CaThi.ReadOnly = true;
             // 
-            // pnlAdmin
+            // maHocKy1
             // 
-            this.pnlAdmin.Controls.Add(this.btnSepGiangVienGac);
-            this.pnlAdmin.Controls.Add(this.label10);
-            this.pnlAdmin.Controls.Add(this.label3);
-            this.pnlAdmin.Controls.Add(this.cbKieuSap);
-            this.pnlAdmin.Controls.Add(this.cbMaGV);
-            this.pnlAdmin.Controls.Add(this.label9);
-            this.pnlAdmin.Controls.Add(this.label8);
-            this.pnlAdmin.Controls.Add(this.nupSoBuoiGac);
-            this.pnlAdmin.Controls.Add(this.ckbTatCa);
-            this.pnlAdmin.Enabled = false;
-            this.pnlAdmin.Location = new System.Drawing.Point(3, 308);
-            this.pnlAdmin.Name = "pnlAdmin";
-            this.pnlAdmin.Size = new System.Drawing.Size(336, 362);
-            this.pnlAdmin.TabIndex = 21;
-            this.pnlAdmin.Visible = false;
+            this.maHocKy1.DataPropertyName = "maHocKy";
+            this.maHocKy1.HeaderText = "mah";
+            this.maHocKy1.Name = "maHocKy1";
+            this.maHocKy1.ReadOnly = true;
+            this.maHocKy1.Visible = false;
             // 
             // UC_SapLich
             // 
@@ -533,11 +544,11 @@
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.pnlAdmin.ResumeLayout(false);
+            this.pnlAdmin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nupSoBuoiGac)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLichThi)).EndInit();
-            this.pnlAdmin.ResumeLayout(false);
-            this.pnlAdmin.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -572,12 +583,13 @@
         private System.Windows.Forms.ComboBox cbKieuSap;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dgvLichThi;
+        private System.Windows.Forms.Panel pnlAdmin;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaLichThi;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaPhong;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaGiangVien;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaLHP;
         private System.Windows.Forms.DataGridViewTextBoxColumn ngayThi;
         private System.Windows.Forms.DataGridViewTextBoxColumn CaThi;
-        private System.Windows.Forms.Panel pnlAdmin;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maHocKy1;
     }
 }

@@ -14,9 +14,11 @@ namespace HeThongSapLich
 {
     public partial class XoaLHP : Form
     {
-        public XoaLHP()
+        string maLHP;
+        public XoaLHP(string maLHP)
         {
             InitializeComponent();
+            this.maLHP = maLHP;
         }
 
         private void XoaLHP_Load(object sender, EventArgs e)
@@ -26,7 +28,7 @@ namespace HeThongSapLich
 
         void LoadLichThi()
         {
-            dgvLichThi.DataSource = LichThiDAO.Instance.LayLichThiTheoMaLHP(UC_TaoLich.maLHP);
+            dgvLichThi.DataSource = LichThiDAO.Instance.LayLichThiTheoMaLHP(maLHP);
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
@@ -43,7 +45,7 @@ namespace HeThongSapLich
         {
             try
             {
-                LopHocPhanDAO.Instance.XoaLHP(UC_TaoLich.maLHP);
+                LopHocPhanDAO.Instance.XoaLHP(maLHP);
                 this.Close();
             }
             catch (Exception a)

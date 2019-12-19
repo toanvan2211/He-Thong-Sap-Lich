@@ -12,19 +12,19 @@ using System.Windows.Forms;
 
 namespace HeThongSapLich
 {
-    public partial class XoaMon : Form
+    public partial class XoaLop : Form
     {
-        string maMon;
-        public XoaMon(string maMon)
+        string maLop;
+        public XoaLop(string maLop)
         {
             InitializeComponent();
-            this.maMon = maMon;
-            LoadLichThi();
+            this.maLop = maLop;
+            LoadLop();
         }
 
-        void LoadLichThi()
+        void LoadLop()
         {
-            dgvLichThi.DataSource = MonDAO.Instance.LayDSLichThiTheoMaMon(maMon);
+            dgvLichThi.DataSource = LichThiDAO.Instance.LayLichThiTheoMaLop(maLop);
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -40,8 +40,8 @@ namespace HeThongSapLich
         private void btnDongY_Click(object sender, EventArgs e)
         {
             try
-            {                
-                if (MonDAO.Instance.XoaMon(maMon) != 0)
+            {
+                if (LopDAO.Instance.XoaLop(maLop) != 0)
                 {
                     this.Close();
                 }
@@ -51,7 +51,7 @@ namespace HeThongSapLich
                     this.Close();
                 }
             }
-            catch (Exception a)
+            catch (System.Data.SqlClient.SqlException a)
             {
                 MessageBox.Show("Đã xảy ra lỗi, vui lòng thử lại sau.\n Lỗi: " + a.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.Close();
