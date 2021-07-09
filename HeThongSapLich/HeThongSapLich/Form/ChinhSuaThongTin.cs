@@ -34,14 +34,9 @@ namespace HeThongSapLich
             cbGioiTinh.Text = gv.GioiTinh;
         }
 
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void btnHuy_Click(object sender, EventArgs e)
         {
-            btnExit_Click(sender, e);
+            btnThoat_Click(sender, e);
         }
 
         bool KiemTra()
@@ -68,7 +63,7 @@ namespace HeThongSapLich
 
             if (KiemTra())
             {
-                if (GiangVienDAO.Instance.ChinhSua(gv))
+                if (GiangVienDAO.Instance.ChinhSua(gv) > 0)
                 {
                     MessageBox.Show("Chỉnh sửa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -77,6 +72,11 @@ namespace HeThongSapLich
                     MessageBox.Show("Đã có lỗi xảy ra, vui lòng thử lại sau!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

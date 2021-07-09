@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,8 +14,8 @@ namespace HeThongSapLich
 {
     public partial class Login : Form
     {
-        public static string user;
-        public static string LoaiTaiKhoan;
+        public static string user, LoaiTaiKhoan, matKhauNow;
+
         public Login()
         {
             InitializeComponent();
@@ -30,27 +31,39 @@ namespace HeThongSapLich
             string TaiKhoan = tbTaiKhoan.Text;
             string MatKhau = tbMatKhau.Text;
 
-            if (KiemTra(TaiKhoan, MatKhau))
+            try
             {
-                user = TaiKhoan;
-                LoaiTaiKhoan = TaiKhoanDAO.Instance.LayLoaiTaiKhoan(TaiKhoan);
-                using (Main m = new Main())
+                if (KiemTra(TaiKhoan, MatKhau))
                 {
-                    this.Hide();
-                    m.ShowDialog();
-                    try
+                    user = TaiKhoan;
+                    matKhauNow = MatKhau;
+                    LoaiTaiKhoan = TaiKhoanDAO.Instance.LayLoaiTaiKhoan(TaiKhoan);
+                    using (Main m = new Main())
                     {
-                        this.Show();
-                    }
-                    catch
-                    {
-                        Application.Exit();
+                        this.Hide();
+                        m.ShowDialog();
+                        try
+                        {
+                            this.Show();
+                        }
+                        catch
+                        {
+                            Application.Exit();
+                        }
                     }
                 }
+                else
+                {
+                    lbThongBao.Text = "Tài khoản hoặc mật khẩu có vẻ không đúng!";
+                }
             }
-            else
+            catch (System.Data.SqlClient.SqlException a)
             {
-                lbThongBao.Text = "Tài khoản hoặc mật khẩu có vẻ không đúng!";
+                MessageBox.Show("Kết nối cơ sở dữ liệu thất bại.\n Lỗi: " + a.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (System.ArgumentException a)
+            {
+                MessageBox.Show("Có vẻ cơ sở dữ liệu đã lỗi thời, vui lòng kiểm tra lại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -78,7 +91,23 @@ namespace HeThongSapLich
 
             if (opf.ShowDialog() == DialogResult.OK)
             {
-                DataProvider.DirectoryFileDB = opf.FileName;
+                DataProvider.Instance.createConnectSTR(opf.FileName);
+                FileInfo info = new FileInfo(opf.FileName);
+
+                try
+                {
+                    string query = "SELECT * from sys.tables";
+                    DataTable dt = DataProvider.Instance.ExecuteQuery(query);
+                    if (dt != null)
+                    {
+                        MessageBox.Show("Kết nối cơ sở dữ liệu thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    } 
+                }
+                catch (System.Data.SqlClient.SqlException a)
+                {
+                    MessageBox.Show("Kết nối cơ sở dữ liệu thất bại.\n Lỗi: " + a.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    DataProvider.Instance.createConnectSTR(@"Data Source=.\sqlexpress;Initial Catalog=SapLich;Integrated Security=True");
+                }
             }
         }
 
@@ -91,6 +120,14 @@ namespace HeThongSapLich
             else
             {
                 this.WindowState = FormWindowState.Normal;
+            }
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            using (QuenMatKhau qmk = new QuenMatKhau())
+            {
+                qmk.ShowDialog();
             }
         }
 

@@ -25,8 +25,8 @@ namespace HeThongSapLich.DTO
             this.Ten = (string)row["ten"];
             this.MaGV = (string)row["maGiangVien"];
             this.Khoa = (string)row["Khoa"];
-            if(row["gmail"] != DBNull.Value)
-                this.Gmail = (string)row["gmail"];
+            if(row["mail"] != DBNull.Value)
+                this.Gmail = (string)row["mail"];
             this.GioiTinh = (string)row["gioiTinh"];
         }
     }

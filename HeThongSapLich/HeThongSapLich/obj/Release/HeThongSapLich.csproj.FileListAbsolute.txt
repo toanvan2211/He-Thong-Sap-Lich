@@ -1,0 +1,17 @@
+E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\HeThongSapLich\bin\Release\HeThongSapLich.exe.config
+E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\HeThongSapLich\bin\Release\HeThongSapLich.exe
+E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\HeThongSapLich\bin\Release\HeThongSapLich.pdb
+E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\HeThongSapLich\obj\Release\HeThongSapLich.csprojAssemblyReference.cache
+E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\HeThongSapLich\obj\Release\HeThongSapLich.Main.resources
+E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\HeThongSapLich\obj\Release\HeThongSapLich.Login.resources
+E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\HeThongSapLich\obj\Release\HeThongSapLich.LogOut.resources
+E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\HeThongSapLich\obj\Release\HeThongSapLich.ChinhSuaThongTin.resources
+E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\HeThongSapLich\obj\Release\HeThongSapLich.Properties.Resources.resources
+E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\HeThongSapLich\obj\Release\HeThongSapLich.SoBuoiGac.resources
+E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\HeThongSapLich\obj\Release\HeThongSapLich.User_Control.UC_GiangVien.resources
+E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\HeThongSapLich\obj\Release\HeThongSapLich.User_Control.UC_LichThi.resources
+E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\HeThongSapLich\obj\Release\HeThongSapLich.User_Control.UC_ThongTin.resources
+E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\HeThongSapLich\obj\Release\HeThongSapLich.csproj.GenerateResource.cache
+E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\HeThongSapLich\obj\Release\HeThongSapLich.exe
+E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\HeThongSapLich\obj\Release\HeThongSapLich.pdb
+E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\HeThongSapLich\HeThongSapLich\HeThongSapLich\obj\Release\HeThongSapLich.User_Control.UC_TaoLich.resources

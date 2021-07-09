@@ -20,9 +20,15 @@ namespace HeThongSapLich.DAO
 
         private DataProvider() { }
 
-        public static string DirectoryFileDB = @"E:\Dữ liệu\Môn học\Trường\Đồ án 1\Phần mềm\Database\XEPLICH.mdf";
-
         private string connectionSTR = @"Data Source=.\sqlexpress;Initial Catalog=SapLich;Integrated Security=True";
+
+        public void createConnectSTR(string filePath)
+        {
+            if (!string.IsNullOrEmpty(filePath))
+            {
+                connectionSTR = @"Data Source=.\SQLEXPRESS; AttachDbFilename=" + filePath + ";Integrated Security=True;Connect Timeout=30;User Instance=True";
+            }
+        }
 
         public DataTable ExecuteQuery(string Lenh, object[] parameter = null)
         {

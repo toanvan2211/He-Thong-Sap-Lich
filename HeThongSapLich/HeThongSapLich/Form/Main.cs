@@ -16,15 +16,27 @@ namespace HeThongSapLich
     {
         int panelWidth;
         bool isColapsed;
-        bool Close;
+        bool closed;
         public static string maGV;
 
         #region Hàm
         private void ThemUC(Control uc)
         {
             uc.Dock = DockStyle.Fill;
-            pnlControls.Controls.Clear();
             pnlControls.Controls.Add(uc);
+            uc.BringToFront();            
+        }
+
+        void CapQuyen()
+        {
+            if (Login.LoaiTaiKhoan == "admin")
+            {
+                btnSapLich.Text = "   Sắp lịch";
+                btnTaoLich.Visible = true;
+                btnTaoLich.Enabled = true;
+                btnQuanLi.Visible = true;
+                btnQuanLi.Enabled = true;
+            }
         }
 
         void LuotPanel(Control a)
@@ -38,11 +50,13 @@ namespace HeThongSapLich
             LuotPanel(btnThongTin);
             panelWidth = pnlLeft.Width;
             isColapsed = false;
-            Close = true;
+            closed = true;
             timerTime.Start();
 
-            UC_ThongTin uctt = new UC_ThongTin();
-            ThemUC(uctt);
+            UC_ThongTin tt = new UC_ThongTin();
+            ThemUC(tt);
+            LuotPanel(btnThongTin);
+            CapQuyen();
         }
         #endregion
 
@@ -56,55 +70,46 @@ namespace HeThongSapLich
         {
             timerPExit.Start();
         }
+        private void btnTaoLich_Click(object sender, EventArgs e)
+        {
+            UC_TaoLich tl = new UC_TaoLich();
+            ThemUC(tl);
+            LuotPanel(btnTaoLich);
+        }
 
         private void BbtnThongTin_Click(object sender, EventArgs e)
         {
-            UC_ThongTin uctt = new UC_ThongTin();
-            ThemUC(uctt);
+            UC_ThongTin tt = new UC_ThongTin();
+            ThemUC(tt);
             LuotPanel(btnThongTin);
         }
 
         private void btnGiangVien_Click(object sender, EventArgs e)
         {
-            UC_GiangVien ucgv = new UC_GiangVien();
-            ThemUC(ucgv);
+            UC_GiangVien gv = new UC_GiangVien();
+            ThemUC(gv);
             LuotPanel(btnGiangVien);
+        }
+
+        private void btnSapLich_Click(object sender, EventArgs e)
+        {
+            UC_SapLich sl = new UC_SapLich();
+            ThemUC(sl);
+            LuotPanel(btnSapLich);
         }
 
         private void btnLichThi_Click(object sender, EventArgs e)
         {
-            UC_LichThi uclt = new UC_LichThi();
-            ThemUC(uclt);
+            UC_Lich l = new UC_Lich();
+            ThemUC(l);
             LuotPanel(btnLichThi);
         }
 
-        private void Timer1_Tick(object sender, EventArgs e)  //Code để thu nhỏ menu cho cái btn ở dưới nè
+        private void btnQuanLi_Click(object sender, EventArgs e)
         {
-            if (isColapsed)
-            {
-                pnlLeft.Width = pnlLeft.Width + 10;
-                if (pnlLeft.Width >= panelWidth)
-                {
-                    timer1.Stop();
-                    isColapsed = false;
-                    this.Refresh();
-                }
-            }
-            else
-            {
-                pnlLeft.Width = pnlLeft.Width - 10;
-                if (pnlLeft.Width <= 70)
-                {
-                    timer1.Stop();
-                    isColapsed = true;
-                    this.Refresh();
-                }
-            }
-        }
-
-        private void btnThuNho_Click(object sender, EventArgs e)  //Thu nhỏ thanh menu nè
-        {
-            timer1.Start();
+            UC_QuanLi ql = new UC_QuanLi();
+            ThemUC(ql);
+            LuotPanel(btnQuanLi);
         }
 
         private void TimerTime_Tick(object sender, EventArgs e) //Đồng hồ nè
@@ -117,13 +122,13 @@ namespace HeThongSapLich
 
         private void timerPExit_Tick(object sender, EventArgs e)
         {
-            if (Close)
+            if (closed)
             {
                 pnlExit.Width = pnlExit.Width + 10;
                 if (pnlExit.Width >= 272)
                 {
                     timerPExit.Stop();
-                    Close = false;
+                    closed = false;
                     this.Refresh();
                 }
             }
@@ -133,7 +138,7 @@ namespace HeThongSapLich
                 if (pnlExit.Width <= 1)
                 {
                     timerPExit.Stop();
-                    Close = true;
+                    closed = true;
                     this.Refresh();
                 }
             }
@@ -147,7 +152,9 @@ namespace HeThongSapLich
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
-            Login.user = "";
+            Login.user = null;
+            Login.matKhauNow = null;
+            Login.LoaiTaiKhoan = null;
         }
     }
 }

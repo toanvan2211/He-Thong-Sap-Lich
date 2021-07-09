@@ -10,80 +10,82 @@ create table giangVien
 	ten nvarchar(100) not null,
 	khoa nvarchar(100) not null default N'Công nghệ thông tin',
 	gioiTinh nvarchar(10) not null default 'Nam',
-	gmail varchar(100)
+	mail varchar(100)
 )
 go
 
 create table taiKhoan
 (
 	taiKhoan varchar(100) primary key,
-	matKhau varchar(100) not null default '1',
-	loaiTaiKhoan varchar(10) not null default 'GiangVien',
-	maGiangVien varchar(10) references giangvien(maGiangVien)
+	matKhau varchar(32) not null default 'C4CA4238A0B923820DCC509A6F75849B',
+	loaiTaiKhoan varchar(10) not null default 'giangvien',
+	maGiangVien varchar(10) references giangvien(maGiangVien) on delete cascade
 )
 go
 
 create table hocKy
 (
 	maHocKy varchar(10) primary key,
-	tenHocKy nvarchar(100) not null,
+	tenHocKy nvarchar(100) not null default N'Chưa đặt tên',
 	thoiGianBatDau date not null,
 	thoiGianKetThuc date not null
 )
 go
 
-create table GacThi
+create table phieuGacThi
 (
 	maGacThi int identity(001, 1) primary key,
-	maGiangVien varchar(10) references giangVien(maGiangVien),
+	maGiangVien varchar(10) references giangVien(maGiangVien) on delete cascade,
 	soBuoiGac tinyint not null default 0,
-	maHocKy varchar(10) references hocKy(maHocKy),
+	maHocKy varchar(10) references hocKy(maHocKy) on delete cascade,
 )
 go
 
-create table Mon
+create table mon
 (
 	maMon varchar(10) primary key,
-	ten nvarchar(100) not null
+	ten nvarchar(100) not null default N'Chưa đặt tên'
 )
 go
 
-create table Lop
+create table lop
 (
-	maLop varchar(10) primary key
+	maLop varchar(10) primary key,
+	tenLop nvarchar(100) not null default N'Chưa đặt tên',
 )
 go
 
-create table LopHocPhan
+create table lopHocPhan
 (
 	maLHP varchar(20) primary key,
-	maLop varchar(10) references Lop(maLop),
-	maMon varchar(10) references Mon(maMon),
+	maLop varchar(10) references Lop(maLop) on delete cascade,
+	maMon varchar(10) references Mon(maMon) on delete cascade,
 	siSo tinyint not null default 0,
 )
 go
 
-create table Phong
+create table phong
 (
-	maPhong varchar(10 ) primary key,
+	maPhong varchar(10) primary key,
+	tenPhong nvarchar(100) not null default N'Chưa đặt tên',
 	sucChua tinyint not null default 10
 )
 go
 
-create table LichThi
+create table lichThi
 (
 	maLichThi varchar(10) primary key,
 	maPhong varchar(10) references Phong(maPhong),
-	maGiangVien varchar(10) references GiangVien(maGiangVien),
-	maLHP varchar(20) references LopHocPhan(maLHP),
+	maGiangVien varchar(10) references GiangVien(maGiangVien) on delete set null,
+	maLHP varchar(20) references LopHocPhan(maLHP) on delete cascade,
 	ngayThi date not null,
 	caThi varchar(10) not null,
-	maHocKy varchar(10) references HocKy(maHocKy)
+	maHocKy varchar(10) references HocKy(maHocKy) on delete cascade
 )
 go
 
 
-INSERT INTO PHONG 
+INSERT INTO PHONG (maPhong, sucChua)
 	VALUES ('C1.1', default), ('C1.2', default), ('C1.3', default), ('C1.4', default), ('C1.5', default),
 		   ('C2.1', default), ('C2.2', default), ('C2.3', default), ('C2.4', default), ('C2.5', default),
 		   ('C3.1', default), ('C3.2', default), ('C3.3', default), ('C3.4', default), ('C3.5', default),
@@ -100,7 +102,7 @@ INSERT INTO GIANGVIEN (maGiangVien, ten, khoa)
 			('6CNTT', N'Nguyễn Văn F', default)
 go
 
-INSERT INTO LOP
+INSERT INTO LOP (MaLop)
 	VALUES ('KTPM0117'), ('KTPM0217'),
 		   ('HTTT0117'), ('HTTT0217'),
 		   ('KHMT0117'), ('KHMT0217')
@@ -126,8 +128,6 @@ INSERT INTO HOCKY
 	VALUES ('001', N'Học kỳ 1 (2018-2019)',  '09/09/2018', '01/16/2019')
 go
 
-select format (thoigianBatDau, 'dd-MM-yyyy') as date
-from hocKy
 
 --SELECT FORMAT (thoiGianBatDau, 'dd-MM-yy') as date
 --from hocKy
@@ -144,17 +144,10 @@ INSERT INTO LichThi (maLichThi, maPhong, maLHP, ngayThi, caThi, maHocKy)
 go
 
 INSERT INTO taiKhoan 
-	VALUES ('admin', default, 'admin', '1CNTT'), ('giangvien', default, 'giangvien', '2CNTT')
+	VALUES ('1CNTT', default, 'admin', '1CNTT'), ('2CNTT', default, 'giangvien', '2CNTT'),
+			('3CNTT', default, 'giangvien', '3CNTT'), ('4CNTT', default, 'giangvien', '4CNTT'),
+			('5CNTT', default, 'giangvien', '5CNTT'), ('6CNTT', default, 'giangvien', '6CNTT')
 go
-
-INSERT INTO GACTHI (maGiangVien, soBuoiGac, maHocKy)
-	VALUES ('1CNTT', DEFAULT, '001'),
-			('2CNTT', DEFAULT, '001'),
-			('3CNTT', DEFAULT, '001'),
-			('4CNTT', DEFAULT, '001'),
-			('5CNTT', DEFAULT, '001'),
-			('6CNTT', DEFAULT, '001')
-GO
 
 create proc USP_Login
 @userName varchar(100), @password varchar(100)
@@ -162,3 +155,134 @@ as
 	Select * from taikhoan where taiKhoan = @userName and matKhau = @password
 go
 
+create proc USP_LayDSLichThi
+@maHocKy varchar(10)
+as
+	select lt.maLichThi, lt.maPhong, lt.maGiangVien, gv.ten, lt.maLHP, lt.ngayThi, lt.caThi
+	from LichThi lt, giangVien gv
+	where lt.maGiangVien = gv.maGiangVien
+		and lt.MaHocKy = @maHocKy
+go
+
+create proc USP_LayDSLichThi2
+@maHocKy varchar(10)
+as
+	select lt.maLichThi, lt.maPhong, lt.maGiangVien, gv.ten, mon.ten as 'mon', lt.maLHP, lt.ngayThi, lt.caThi
+	from LichThi lt, giangVien gv, mon, LopHocPhan lhp 
+	where lt.maGiangVien = gv.maGiangVien
+		and lt.MaHocKy = @maHocKy
+		and mon.maMon = lhp.maMon
+		and lt.maLHP = lhp.maLHP
+go
+
+create proc USP_ThemLichThi
+@maLich varchar(10), @maPhong varchar(10), @maLHP varchar(20), @ngayThi date, @caThi varchar(10), @maHocKy varchar(10)
+as
+	insert into LichThi (maLichThi, maPhong, maLHP, ngayThi, caThi, maHocKy)
+	values (@maLich, @maPhong, @maLHP, @ngayThi, @caThi, @maHocKy)
+go
+
+create proc USP_XoaLich
+@maLich varchar(10)
+as
+	delete LichThi
+	where maLichThi = @maLich
+go
+
+create proc USP_TaoPhieuGacThi
+@maGV varchar(10), @maHocKy varchar(10)
+as 
+	insert into phieuGacThi (maGiangVien, maHocKy)
+	values (@maGV, @maHocKy)
+go
+
+create proc USP_ThemGiangVien
+@maGV varchar(10), @tenGV nvarchar(100), @khoa nvarchar(100), @gioiTinh nvarchar(10), @gmail varchar(100)
+as
+	insert into GiangVien
+	values (@maGv, @tenGv, @khoa, @gioiTinh, @gmail)
+go
+
+create proc USP_ThemGiangVien1
+@maGV varchar(10), @tenGV nvarchar(100), @khoa nvarchar(100), @gioiTinh nvarchar(10)
+as
+	insert into GiangVien (maGiangVien, Ten, Khoa, GioiTinh)
+	values (@maGv, @tenGv, @khoa, @gioiTinh)
+go
+
+create proc USP_ThemLHP
+@maLHP varchar(20), @maLop varchar(10), @maMon varchar(10), @siSo tinyint
+as
+	insert into LopHocPhan
+	values (@maLHP, @maLop, @maMon, @siSo)
+go
+
+create proc USP_XoaLHP
+@maLHP varchar(20)
+as
+	delete LichThi
+	where maLHP = @maLHP
+
+	delete LopHocPhan
+	where maLHP = @maLHP
+go
+
+create proc USP_ThemMon
+@maMon varchar(10), @tenMon nvarchar(100)
+as
+	insert into Mon
+	values (@maMon, @tenMon)
+go
+
+create proc USP_ThemHocKy
+@maHocKy varchar(10), @tenHocKy nvarchar(100), @tgbd date, @tgkt date
+as
+	insert into HocKy
+	values (@maHocKy, @tenHocKy, @tgbd, @tgkt)
+go
+
+create proc USP_TaoTaiKhoan
+@maGiangVien varchar(10)
+as
+	insert into TaiKhoan (taiKhoan, maGiangVien)
+	values (@maGiangVien, @maGiangVien)
+go
+
+create proc USP_NangQuyenTaiKhoan
+@taiKhoan varchar(10)
+as
+	update TaiKhoan set loaiTaiKhoan = 'admin' where taiKhoan = @taiKhoan
+go
+
+create proc USP_DoiMatKhau
+@taiKhoan varchar(10), @matKhau varchar(100)
+as
+	update TaiKhoan set matKhau = @matKhau where taiKhoan = @taiKhoan
+go
+
+create proc USP_TaoLop
+@maLop varchar(10), @tenLop nvarchar(100)	
+as
+	insert into lop
+	values (@maLop, @tenLop)
+go
+
+
+create proc USP_TaoLop1
+@maLop varchar(10)
+as
+	insert into lop
+	values (@maLop, default)
+go
+
+create proc USP_ChinhSuaHocKy
+@maHocKy varchar(10), @tenHocKy nvarchar(100), @bd date, @kt date
+as
+	update hocKy set tenHocKy = @tenHocKy, thoiGianBatDau = @bd, thoiGianKetThuc = @kt where maHocKy = @maHocKy
+go
+ 
+create proc USP_ChinhSuaHocKy1
+@maHocKy varchar(10), @bd date, @kt date
+as
+	update hocKy set tenHocKy = default, thoiGianBatDau = @bd, thoiGianKetThuc = @kt where maHocKy = @maHocKy
+go

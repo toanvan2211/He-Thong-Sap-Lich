@@ -12,11 +12,11 @@ using HeThongSapLich.DTO;
 
 namespace HeThongSapLich
 {
-    public partial class SoBuoiGac : Form
+    public partial class frPhieuGac : Form
     {
         string MaHocKy;
         List<HocKy> listHocKy = new List<HocKy>();
-        public SoBuoiGac()
+        public frPhieuGac()
         {
             InitializeComponent();
             LoadKyThi();
@@ -38,13 +38,18 @@ namespace HeThongSapLich
 
         void LoadDSGacThi()
         {
-            dgvSoBuoiGac.DataSource = GacThiDAO.Instance.LayDSGacThi(MaHocKy);
+            dgvSoBuoiGac.DataSource = PhieuGacThiDAO.Instance.LayDSGacThi(MaHocKy);
         }
 
         private void cbHocKy_SelectedIndexChanged(object sender, EventArgs e)
         {
             MaHocKy = listHocKy[cbHocKy.SelectedIndex].MaHocKy;
             LoadDSGacThi();
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -38,16 +38,33 @@ namespace HeThongSapLich.DAO
             return row;
         }
 
-        public bool ChinhSua(GiangVien gv)
+        public int ChinhSua(GiangVien gv)
         {
-            string query = "update giangvien set ten = N'" + gv.Ten + "', khoa = N'" + gv.Khoa + "', gioiTinh = N'" + gv.GioiTinh + "', gmail = '" + gv.Gmail + "' where maGiangVien = '" + gv.MaGV + "'";
-            return DataProvider.Instance.ExecuteNonQuery(query) == 1;
+            string query = "update giangvien set ten = N'" + gv.Ten + "', khoa = N'" + gv.Khoa + "', gioiTinh = N'" + gv.GioiTinh + "', mail = '" + gv.Gmail + "' where maGiangVien = '" + gv.MaGV + "'";
+            return DataProvider.Instance.ExecuteNonQuery(query);
         }
 
-        public bool ThemGiangVien(GiangVien gv)
+        public int ThemGiangVien(GiangVien gv)
         {
-            string query = "Insert into giangvien values ('" + gv.MaGV + "',N'" + gv.Ten + "',N'" + gv.Khoa + "','" + gv.Gmail + "', N'" + gv.GioiTinh + "')";
-            return DataProvider.Instance.ExecuteNonQuery(query) == 1;
+            string query = "USP_ThemGiangVien @maGV , @ten , @Khoa , @GioiTinh , @gmail";
+            return DataProvider.Instance.ExecuteNonQuery(query, new object[] { gv.MaGV, gv.Ten, gv.Khoa, gv.GioiTinh, gv.Gmail});
+        }
+        public int ThemGiangVien1(GiangVien gv)
+        {
+            string query = "USP_ThemGiangVien1 @maGV , @ten , @Khoa , @GioiTinh";
+            return DataProvider.Instance.ExecuteNonQuery(query, new object[] { gv.MaGV, gv.Ten, gv.Khoa, gv.GioiTinh});
+        }
+
+        public int XoaGiangVien(string maGiangVien)
+        {
+            string query = "delete giangVien where maGiangVien = '" + maGiangVien + "'";
+            return DataProvider.Instance.ExecuteNonQuery(query);
+        }
+
+        public DataTable LayGmail(string gmail)
+        {
+            string query = "select * from giangVien where mail = '" + gmail + "'";
+            return DataProvider.Instance.ExecuteQuery(query);
         }
     }
 }
